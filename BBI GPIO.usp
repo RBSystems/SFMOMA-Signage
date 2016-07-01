@@ -1,0 +1,639 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name: BBI Engineering, Inc.
+System Name:		
+System Number:
+Programmer: Sam Wong
+Comments:
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+// #ENABLE_DYNAMIC
+#SYMBOL_NAME "BBI GPIO"
+// #HINT ""
+#DEFINE_CONSTANT	N_DIO		4
+#DEFINE_CONSTANT	MODE_INPUT	1
+#DEFINE_CONSTANT	MODE_OUTPUT	2
+#DEFINE_CONSTANT	MODE_PWM	3
+
+// #CATEGORY "" 
+#CATEGORY "46" "General Purposes I/O" // Custom
+// #PRINT_TO_TRACE
+// #DIGITAL_EXPAND 
+// #ANALOG_SERIAL_EXPAND 
+// #OUTPUT_SHIFT 
+// #HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+// #ENCODING_ASCII
+// #ENCODING_UTF16
+// #ENCODING_INHERIT_FROM_PARENT
+// #ENCODING_INHERIT_FROM_PROGRAM
+
+#HELP_BEGIN
+   This module communicates with a BBI GPIO board. The UDP/TCP port number is 10004. When UDP is used,
+Ping_UDP must be pulsed periodically in order to maintain the subscription for unsolicited status reports. 
+TCP connection will receive status reports without subscription. The digital outputs are Open-Collector outputs.
+                                           
+Inputs:
+
+ConnectF_TCP - connect to ConnectF of the TCP client module.
+
+Ping_UDP - when UDP is used, pulse this with a period no more than 30 seconds to keep the subscription.
+
+Refresh - force a retrieval of all outputs from the GPIO board.
+
+Relay_On - turn on the relay.
+Relay_Off - turn off the relay.
+Relay_Toggle - toggle the relay.
+
+Dout_On[4] - set the state of the digital outputs to 1. A 1 will turn on the output transitor, bringing the output to low.
+            - No effect if the output is not in output mode.
+Dout_OFF[4] - set the state of the digital outputs to 0. A 0 will turn off the output transitor, bringing the output to high.
+            - No effect if the output is not in output mode.
+Dout_Toggle[4] - toggle the digital outputs.
+
+qePosition - set the quadrature encoder position.
+qeIndex - set the quadrature encoder index value.
+
+DutyCycle[4] - set the output dutycycle for an output in PWM mode. No effect on output if it is not in PWM mode.
+             - Dutycycle is from 0 to 65535 corresponding to 0 to 100%
+
+rx$ - input from the TCP or UDP module.
+     
+
+
+Outputs:
+
+Relay_On_FB - relay is on.
+Relay_Off_FB - relay is off.
+
+Din[4] - digital input state.
+Dout_FB[4] - digital output state.
+
+ADC - position of the ADC input, between 0 and 65535.
+
+qePosition_FB - current quadrature encoder position.
+qeIndex_FB - current quadrature encoder index position.
+
+DutyCycle_FB[4] - current dutycycle of PWM outputs.
+
+tx$ - output to TCP or UDP module.
+     
+
+
+Parameters:
+
+Use_TCP - set to 1 when TCP is used, 0 when UDP is used.
+
+PWM_Freq - PWM frequency of outputs in PWM mode. This affects all PWM outputs.
+
+ADC_Poll_Period - When set to non-zero value, the ADC value will be reported periodically at the specified time.
+ADC_Report_Delta - When set to non-zero value, the ADC value will be reported when it has changed more than the 
+                   this parameter value. 
+ADC_Min and ADC_Max - specify the report range the ADC values need to be scaled to.
+
+QEP_Poll_Period - When set to non-zero value, the quadrature encoder position will be reported periodically at the specified time.
+QEP_Report_Delta - When set to non-zero value, the quadrature encoder position will be reported when it has changed more than the 
+                   this parameter value. 
+QEI_Poll_Period - When set to non-zero value, the quadrature encoder index value will be reported periodically at the specified time.
+QEI_Report_Delta - When set to non-zero value, the quadrature encoder index value will be reported when it has changed more than the 
+                   this parameter value. 
+    If both poll period and report delta are not zero, values will be reported periodically. However, if the change
+    is larger than the threshold since the last report, the new value will be reported immediately and reset the
+    period clock. 
+
+IO1_Mode to IO4_Mode - set the digital I/O line mode. 1 = Digital Input, 2 = Digital Output, 3 = PWM output.
+
+#HELP_END
+
+/*******************************************************************************************
+  Include Libraries
+  (Uncomment and include additional libraries as needed)
+*******************************************************************************************/
+// #CRESTRON_LIBRARY ""
+// #USER_LIBRARY ""
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+  (Uncomment and declare inputs and outputs as needed)
+*******************************************************************************************/
+DIGITAL_INPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_INPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_INPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_INPUT ConnectF_TCP, Ping_UDP, Refresh, _SKIP_;	// ping if using UDP
+DIGITAL_INPUT Relay_On, Relay_Off, Relay_Toggle, _SKIP_;
+DIGITAL_INPUT qePosClear, qeIndexClear, _SKIP_;
+DIGITAL_INPUT Dout_On[N_DIO], Dout_Off[N_DIO];
+DIGITAL_INPUT Dout_Toggle[N_DIO], _SKIP_;
+BUFFER_INPUT rx$[10000], _SKIP_;
+ANALOG_INPUT DutyCycle[N_DIO];
+                                       
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT Relay_On_FB, Relay_Off_FB, _SKIP_;
+DIGITAL_OUTPUT Din[N_DIO], _SKIP_;
+DIGITAL_OUTPUT Dout_FB[N_DIO], _SKIP_;
+ANALOG_OUTPUT ADC, _SKIP_;
+ANALOG_OUTPUT qePosition_FB, qeIndex_FB, _SKIP_;
+STRING_OUTPUT error$;
+STRING_OUTPUT tx$, _SKIP_;
+ANALOG_OUTPUT DutyCycle_FB[N_DIO];
+
+/*******************************************************************************************
+  SOCKETS
+  (Uncomment and define socket definitions as needed)
+*******************************************************************************************/
+// TCP_CLIENT
+// TCP_SERVER
+// UDP_SOCKET
+
+/*******************************************************************************************
+  Parameters
+  (Uncomment and declare parameters as needed)
+*******************************************************************************************/
+INTEGER_PARAMETER Use_TCP;
+INTEGER_PARAMETER PWM_Freq;
+INTEGER_PARAMETER ADC_Poll_Period;
+INTEGER_PARAMETER ADC_Report_Delta;
+INTEGER_PARAMETER ADC_Min;
+INTEGER_PARAMETER ADC_Max;
+INTEGER_PARAMETER QEP_Poll_Period;
+INTEGER_PARAMETER QEP_Report_Delta;
+INTEGER_PARAMETER QEI_Poll_Period;
+INTEGER_PARAMETER QEI_Report_Delta;
+INTEGER_PARAMETER IO1_Mode;
+INTEGER_PARAMETER IO2_Mode;
+INTEGER_PARAMETER IO3_Mode;
+INTEGER_PARAMETER IO4_Mode;
+// SIGNED_INTEGER_PARAMETER
+// LONG_INTEGER_PARAMETER
+// SIGNED_LONG_INTEGER_PARAMETER
+// STRING_PARAMETER
+
+/*******************************************************************************************
+  Parameter Properties
+  (Uncomment and declare parameter properties as needed)
+*******************************************************************************************/
+                          
+#BEGIN_PARAMETER_PROPERTIES Use_TCP
+   propDefaultValue = 1d;  
+   propList = {0d, "No"}, {1d, "Yes"};
+   propShortDescription = "Set to 1 for TCP mode, 0 for UDP";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES PWM_Freq
+   propBounds = 1d , 25000d;
+   propDefaultValue = 1000d;  
+   propShortDescription = "PWM Frequency in Hz";
+#END_PARAMETER_PROPERTIES
+                            
+#BEGIN_PARAMETER_PROPERTIES ADC_Poll_Period
+   propValidUnits = unitTime;
+   propBounds = 0s, 65.535s;
+   propDefaultValue = 0s;
+   propShortDescription = "ADC poll period. 0 => don't poll";
+#END_PARAMETER_PROPERTIES
+                         
+#BEGIN_PARAMETER_PROPERTIES ADC_Report_Delta
+   propDefaultValue = 0d;
+   propShortDescription = "ADC report delta threshold. 0 => no threshold report";
+#END_PARAMETER_PROPERTIES
+                               
+#BEGIN_PARAMETER_PROPERTIES ADC_Min
+   propDefaultValue = 0d;
+   propShortDescription = "Minimum of ADC report range.";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES ADC_Max
+   propDefaultValue = 65535d;
+   propShortDescription = "Maximum of ADC report range.";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES QEP_Poll_Period
+   propValidUnits = unitTime;
+   propBounds = 0s, 65.535s;
+   propDefaultValue = 0s;
+   propShortDescription = "Quadrature position poll period. 0 => don't poll";
+#END_PARAMETER_PROPERTIES
+                         
+#BEGIN_PARAMETER_PROPERTIES QEP_Report_Delta
+   propDefaultValue = 0d;
+   propShortDescription = "Quadrature position report delta threshold. 0 => no threshold report";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES QEI_Poll_Period
+   propValidUnits = unitTime;
+   propBounds = 0s, 65.535s;
+   propDefaultValue = 0s;
+   propShortDescription = "Quadrature index poll period. 0 => don't poll";
+#END_PARAMETER_PROPERTIES
+                         
+#BEGIN_PARAMETER_PROPERTIES QEI_Report_Delta
+   propDefaultValue = 0d;
+   propShortDescription = "Quadrature index report delta threshold. 0 => no threshold report";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES IO1_Mode
+   propValidUnits = unitDecimal;
+   propDefaultValue = 1d;
+   propList = {1d, "Input"}, {2d, "Output"}, {3d, "PWM"};
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES IO2_Mode
+   propValidUnits = unitDecimal;
+   propDefaultValue = 1d;
+   propList = {1d, "Input"}, {2d, "Output"}, {3d, "PWM"};
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES IO3_Mode
+   propValidUnits = unitDecimal;
+   propDefaultValue = 1d;
+   propList = {1d, "Input"}, {2d, "Output"}, {3d, "PWM"};
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES IO4_Mode
+   propValidUnits = unitDecimal;
+   propDefaultValue = 1d;
+   propList = {1d, "Input"}, {2d, "Output"}, {3d, "PWM"};
+#END_PARAMETER_PROPERTIES
+
+/*******************************************************************************************
+  Structure Definitions
+  (Uncomment and define structure definitions as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: struct.myString = "";
+*******************************************************************************************/
+/*
+STRUCTURE MyStruct1
+{
+};
+
+MyStruct1 struct;
+*/
+
+/*******************************************************************************************
+  Global Variables
+  (Uncomment and declare global variables as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: myString = "";
+*******************************************************************************************/
+INTEGER hasCurrent;
+INTEGER relay;
+INTEGER hasPing;
+INTEGER currentDout[N_DIO];
+INTEGER currentMode[N_DIO];
+
+/*******************************************************************************************
+  Functions
+  (Add any additional functions here)
+  Note:  Functions must be physically placed before the location in
+         the code that calls them.
+*******************************************************************************************/
+          
+FUNCTION SendCommand(STRING cmd)
+{
+	if (Use_TCP)
+	{
+		if (ConnectF_TCP)
+			tx$ = cmd;
+	}
+	else
+		tx$ = cmd;
+}
+                  
+FUNCTION GetCurrent()
+{
+	INTEGER i;
+	STRING cmd$[32];
+         
+	MakeString(cmd$, "ASM,%d\x0D\x0A", ADC_Min);
+	SendCommand(cmd$);
+	MakeString(cmd$, "ASX,%d\x0D\x0A", ADC_Max);
+	SendCommand(cmd$);
+	MakeString(cmd$, "ADRT,%d\x0D\x0A", ADC_Report_Delta);
+	SendCommand(cmd$);
+	MakeString(cmd$, "ADRP,%d\x0D\x0A", ADC_Poll_Period * 10);	// in milliseconds
+	SendCommand(cmd$);
+	MakeString(cmd$, "QERT,%d\x0D\x0A", QEP_Report_Delta);
+	SendCommand(cmd$);
+	MakeString(cmd$, "QERP,%d\x0D\x0A", QEP_Poll_Period * 10);	// in milliseconds
+	SendCommand(cmd$);
+	MakeString(cmd$, "QERTI,%d\x0D\x0A", QEI_Report_Delta);
+	SendCommand(cmd$);
+	MakeString(cmd$, "QERPI,%d\x0D\x0A", QEI_Poll_Period * 10);	// in milliseconds
+	SendCommand(cmd$);
+	MakeString(cmd$, "PF,%d\x0D\x0A", PWM_Freq);
+	SendCommand(cmd$);
+	for (i = 1 TO N_DIO)
+	{
+		MakeString(cmd$, "IOM,%d,%d\x0D\x0A", i, currentMode[i]);
+		SendCommand(cmd$);
+	}
+	SendCommand("RL\x0D\x0A");
+	FOR (i = 1 TO N_DIO)
+	{
+		MakeString(cmd$, "DI,%d\x0D\x0A", i);
+		SendCommand(cmd$);
+		MakeString(cmd$, "DO,%d\x0D\x0A", i);
+		SendCommand(cmd$);
+	}
+	for (i = 1 to N_DIO)
+	{
+		MakeString(cmd$, "DC,%d\x0D\x0A", i);
+		SendCommand(cmd$);
+	}
+	hasCurrent = 1;
+}
+
+FUNCTION ParseResponse(STRING response)
+{
+	INTEGER pos1;
+	INTEGER val1, val2, dc, frac;
+	STRING stemp[256];
+        
+	if (FIND("Error:", response))
+	{
+    	error$ = response;
+		return;
+	}
+	SWITCH (1)
+	{
+		CASE (FIND("*ADS,", response)):
+		{
+			stemp = REMOVE("*ADS,", response);
+			ADC = ATOI(response);					// this should ignore the decimal part
+		}
+		CASE (FIND("*DC,", response)):
+		{
+			stemp = REMOVE("*DC,", response);
+			val1 = ATOI(response);
+			if (val1 < 1 || val1 > N_DIO)
+				return;
+			pos1 = FIND(",", response);
+			if (pos1 = 0)
+				return;
+			stemp = RIGHT(response, LEN(response) - pos1);
+			dc = ATOI(stemp);
+			pos1 = FIND(".", stemp);
+			stemp = RIGHT(stemp, LEN(stemp) - pos1);
+			frac = ATOI(stemp);
+			DutyCycle_FB[val1] = dc * 656 + (frac * 656) / 100;		
+		}
+		CASE (FIND("*DI,", response)):
+		{
+			stemp = REMOVE("*DI,", response);
+			val1 = ATOI(response);
+			if (val1 < 1 || val1 > N_DIO)
+				return;
+			pos1 = FIND(",", response);
+			if (pos1 = 0)
+				return;
+			stemp = RIGHT(response, LEN(response) - pos1);
+			val2 = ATOI(stemp);
+			Din[val1] = val2 <> 0;		
+		}
+		case (FIND("*DO,", response)):
+		{
+			stemp = REMOVE("*DO,", response);
+			val1 = ATOI(response);
+			if (val1 < 1 || val1 > N_DIO)
+				return;
+			pos1 = FIND(",", response);
+			if (pos1 = 0)
+				return;
+			stemp = RIGHT(response, LEN(response) - pos1);
+			val2 = ATOI(stemp);
+			currentDout[val1] = val2 <> 0;
+			Dout_FB[val1] = val2 <> 0;		
+		}
+		case (FIND("*IOM,", response)):
+		{
+			stemp = REMOVE("*IOM,", response);
+			val1 = ATOI(response);
+			if (val1 < 1 || val1 > N_DIO)
+				return;
+			pos1 = FIND(",", response);
+			if (pos1 = 0)
+				return;
+			stemp = RIGHT(response, LEN(response) - pos1);
+			val2 = ATOI(stemp);
+			if (currentMode[val1] <> val2)
+			{
+				// enforce the mode
+				MakeString(stemp, "IOM,%d,%d\x0D\x0A", val1, currentMode[val1]);
+				SendCommand(stemp);
+			}
+		}
+		CASE (FIND("*QEI,", response)):
+		{
+			stemp = REMOVE("*QEI,", response);
+			val1 = ATOI(response);
+			if (LEFT(response,1) = "-")
+				qeIndex_FB = - val1;
+			else
+				qeIndex_FB = val1;
+		}
+		CASE (FIND("*QEP,", response)):
+		{
+			stemp = REMOVE("*QEP,", response);
+			val1 = ATOI(response);
+			if (LEFT(response,1) = "-")
+				qePosition_FB = - val1;
+			else
+				qePosition_FB = val1;
+		}
+		CASE (FIND("*RL,", response)):
+		{
+			stemp = REMOVE("*RL,", response);
+			val1 = ATOI(response);
+			relay = val1 <> 0;	
+			if (relay)
+			{
+				Relay_Off_FB = 0;
+				Relay_On_FB = 1;
+			}
+			else
+			{
+				Relay_On_FB = 0;
+				Relay_Off_FB = 1;
+			}
+		}
+	}
+}
+
+/*******************************************************************************************
+  Event Handlers
+  (Uncomment and declare additional event handlers as needed)
+*******************************************************************************************/
+         
+PUSH Refresh
+{
+	GetCurrent();
+}
+
+PUSH Relay_On
+{
+	SendCommand("RL,1\x0D\x0A");	
+}
+  
+PUSH Relay_Off
+{
+	SendCommand("RL,0\x0D\x0A");
+}
+
+PUSH Relay_Toggle
+{
+	if (relay)
+		SendCommand("RL,0\x0D\x0A");
+	else
+		SendCommand("RL,1\x0D\x0A");
+}
+     
+PUSH Dout_On
+{
+	INTEGER which;
+	STRING cmd$[32];
+                     
+	which = GetLastModifiedArrayIndex();
+	if (currentMode[which] <> MODE_OUTPUT)
+	{
+		MakeString(error$, "IO %d is not in output mode.", which);
+		PRINT("IO %d is not in output mode.\x0D\x0A", which);
+	}
+	else
+	{
+		MakeString(cmd$, "DO,%d,1\x0D\x0A", which);
+		SendCommand(cmd$);
+	}
+}
+  
+PUSH Dout_Off
+{
+	INTEGER which;
+	STRING cmd$[32];
+                     
+	which = GetLastModifiedArrayIndex();
+	if (currentMode[which] <> MODE_OUTPUT)
+	{
+		MakeString(error$, "IO %d is not in output mode.", which);
+		PRINT("IO %d is not in output mode.\x0D\x0A", which);
+	}
+	else
+	{
+		MakeString(cmd$, "DO,%d,0\x0D\x0A", which);
+		SendCommand(cmd$);
+	}
+}
+  
+PUSH Dout_Toggle
+{
+	INTEGER which;
+	STRING cmd$[32];
+
+	which = GetLastModifiedArrayIndex();
+	MakeString(cmd$, "DO,%d,%d\x0D\x0A", which, !currentDout[which]);
+	SendCommand(cmd$);
+}
+
+PUSH ConnectF_TCP
+{
+	currentMode[1] = IO1_Mode;
+	currentMode[2] = IO2_Mode;
+	currentMode[3] = IO3_Mode;
+	currentMode[4] = IO4_Mode;
+	GetCurrent();
+}
+    
+PUSH Ping_UDP
+{
+	if (hasCurrent = 0)
+		GetCurrent();
+	SendCommand("PN\x0D\0x0A");
+}
+        
+PUSH qePosClear
+{
+	SendCommand("QECP\x0D\x0A");
+}
+          
+PUSH qeIndexClear
+{
+	SendCommand("QECI\x0D\x0A");
+}
+      
+CHANGE DutyCycle
+{
+	INTEGER which;
+	INTEGER dc, frac;
+	STRING cmd$[32];
+
+	which = GetLastModifiedArrayIndex();
+	if (currentMode[which] <> MODE_PWM)
+		MakeString(error$, "IO %d is not in PWM mode.", which);
+	else
+	{
+		if (DutyCycle[which] = 65535)
+		{
+			MakeString(cmd$, "DC,%d,100\x0D\x0A", which);
+		}
+		else
+		{
+			dc = DutyCycle[which];
+			dc = (dc >> 2) + (dc >> 3) + (dc >> 6);
+			frac = dc & 0xFF;
+			dc = dc >> 8;
+			if (dc > 100)
+			{
+				dc = 100;
+				frac = 0;
+			}
+			else
+			{
+				frac = frac * 100;
+				frac = ((frac >> 7) + 1) / 2;			// round it
+			}
+			MakeString(cmd$, "DC,%d,%d.%02d\x0D\x0A", which, dc, frac);
+		}
+		SendCommand(cmd$);
+	}
+	
+}
+
+THREADSAFE CHANGE rx$
+{
+	STRING stemp[256];
+ 
+	try
+	{
+		while (1)
+		{
+			stemp = GATHER("\x0D\x0A", rx$);
+			if (len(stemp) > 0)
+				ParseResponse(stemp);
+		}
+	}
+	catch
+	{
+	}
+}
+
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+Function Main()
+{
+    WaitForInitializationComplete();
+	hasCurrent = 0;
+}
+

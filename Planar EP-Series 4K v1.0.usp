@@ -1,0 +1,1614 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name:
+System Name:
+System Number:
+Programmer: DG
+Comments:
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+
+#SYMBOL_NAME "Planar EP-Series 4K v1.0"
+#CATEGORY "24" // TV/Video Projector
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+  
+// UNUSED
+// #ENABLE_DYNAMIC
+// #HINT ""
+// #PRINT_TO_TRACE
+// #DIGITAL_EXPAND 
+// #ANALOG_SERIAL_EXPAND 
+// #OUTPUT_SHIFT 
+// #HELP_PDF_FILE ""
+// #ENCODING_ASCII
+// #ENCODING_UTF16
+// #ENCODING_INHERIT_FROM_PARENT
+// #ENCODING_INHERIT_FROM_PROGRAM
+
+// MAX STUFF
+#DEFINE_CONSTANT MAX_QUEUE_ITEMS 				50
+#DEFINE_CONSTANT MAX_COMMAND_SIZE 				255
+#DEFINE_CONSTANT MAX_RESPONSE_SIZE 				255
+#DEFINE_CONSTANT MAX_BUFFER_SIZE 				10000
+#DEFINE_CONSTANT MAX_VIDEO_SOURCES 				7
+#DEFINE_CONSTANT MAX_AUDIO_SOURCES				7
+#DEFINE_CONSTANT MAX_MS_VIEWS					8
+#DEFINE_CONSTANT MAX_MS_WINDOWS					3
+#DEFINE_CONSTANT MAX_MS_PRESETS					4
+#DEFINE_CONSTANT MAX_PS_CONFIGS					3
+#DEFINE_CONSTANT MAX_REMOTE_COMMANDS			36
+#DEFINE_CONSTANT MAX_VOL_LVL 					100
+#DEFINE_CONSTANT MAX_BACKLIGHT_LVL				100 
+
+// MIN STUFF
+#DEFINE_CONSTANT MIN_VOL_LVL 					0
+#DEFINE_CONSTANT MIN_BACKLIGHT_LVL				0
+
+// VALUE RESET
+#DEFINE_CONSTANT BLANK_STRING 					""
+#DEFINE_CONSTANT NULL		 					65535
+
+// OTHER STUFF
+#DEFINE_CONSTANT TRUE 							1
+#DEFINE_CONSTANT FALSE 							0
+#DEFINE_CONSTANT QTY_OF_QUEUES 					2
+#DEFINE_CONSTANT POLL_TIME 						2000 // 20 seconds
+#DEFINE_CONSTANT HEARTBEAT_TIME 				3000 // 30 seconds
+
+// STATIC MESSAGE DATA
+#DEFINE_CONSTANT MSG_START						"\x07"
+#DEFINE_CONSTANT MSG_IDT						"\x01"                  
+#DEFINE_CONSTANT MSG_READ						"\x01"                  
+#DEFINE_CONSTANT MSG_WRITE						"\x02"
+#DEFINE_CONSTANT MSG_RETURN						"\x00"                  
+#DEFINE_CONSTANT MSG_END						"\x08"
+
+// COMMAND DATA
+#DEFINE_CONSTANT CMD_PWR						"POW"
+#DEFINE_CONSTANT CMD_VID_SRC					"MIN"
+#DEFINE_CONSTANT CMD_VOL						"VOL"
+#DEFINE_CONSTANT CMD_BACKLIGHT					"BRI"
+#DEFINE_CONSTANT CMD_MUTE						"MUT"
+#DEFINE_CONSTANT CMD_AUD_SRC					"CAS"
+#DEFINE_CONSTANT CMD_MS_VIEW					"PSC"
+#DEFINE_CONSTANT CMD_MS_SELECT_2				"PIN"
+#DEFINE_CONSTANT CMD_MS_SELECT_3				"PIO"
+#DEFINE_CONSTANT CMD_MS_SELECT_4				"PIP" 
+#DEFINE_CONSTANT CMD_MS_PRESET					"PRC"                                      
+#DEFINE_CONSTANT CMD_PWR_SAVE					"WFS"
+#DEFINE_CONSTANT CMD_MSG_BOX					"MSB"                                              
+#DEFINE_CONSTANT CMD_REMOTE						"RCU"
+#DEFINE_CONSTANT CMD_VERSION					"GVE"
+#DEFINE_CONSTANT CMD_SERIAL_NUM					"SER"
+#DEFINE_CONSTANT CMD_MODEL_NAME					"MNA"
+
+#DEFINE_CONSTANT CMD_STATE_OFF					"\x00"
+#DEFINE_CONSTANT CMD_STATE_ON					"\x01"
+
+// MESSAGE LOCATIONS
+#DEFINE_CONSTANT MSG_LOC_START					1
+#DEFINE_CONSTANT MSG_LOC_IDT					2
+#DEFINE_CONSTANT MSG_LOC_TYPE					3
+#DEFINE_CONSTANT MSG_LOC_CMD_BEGIN				4
+#DEFINE_CONSTANT MSG_LOC_CMD_END				6
+#DEFINE_CONSTANT MSG_LOC_STATUS					7
+
+#HELP_BEGIN
+To be used with Planar EP-Series 4K RS232 v1.0.umc or Planar EP-Series 4K IP v1.0.umc modules only.
+Not to be used as a stand-alone module. 
+#HELP_END
+
+/*******************************************************************************************
+  Include Libraries
+  (Uncomment and include additional libraries as needed)
+*******************************************************************************************/
+// #CRESTRON_LIBRARY ""
+// #USER_LIBRARY ""
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+  (Uncomment and declare inputs and outputs as needed)
+*******************************************************************************************/
+
+DIGITAL_INPUT 	_SKIP_,Connect, Disconnect, Initialize,	_SKIP_, Power_On, Power_Off, Power_Toggle, 
+				_SKIP_, Volume_Up, Volume_Down,	Volume_Mute_On, Volume_Mute_Off, Volume_Mute_Toggle, 
+				_SKIP_, Backlight_Up, Backlight_Down, _SKIP_, Message_Box_On, Message_Box_Off, 
+				Message_Box_Toggle, _SKIP_, Poll_Enable, _SKIP_, Video_Input_Cycle, MultiSource_Views_Cycle,   
+				Power_Save_Configs_Cycle, _SKIP_, Video_Inputs[MAX_VIDEO_SOURCES], _SKIP_, 
+				Audio_Inputs[MAX_AUDIO_SOURCES], _SKIP_, MultiSource_Views[MAX_MS_VIEWS], _SKIP_, 
+				MultiSource_Select_2[MAX_VIDEO_SOURCES], _SKIP_, MultiSource_Select_3[MAX_VIDEO_SOURCES], 
+				_SKIP_, MultiSource_Select_4[MAX_VIDEO_SOURCES], _SKIP_, MultiSource_Presets[MAX_MS_PRESETS], 
+				_SKIP_, Power_Save_Configs[MAX_PS_CONFIGS], _SKIP_, Remote_Commands[MAX_REMOTE_COMMANDS], _SKIP_;
+    
+ANALOG_INPUT 	Volume_Set, _SKIP_, Backlight_Set, _SKIP_;
+
+BUFFER_INPUT 	From_Device[MAX_BUFFER_SIZE];  
+         
+/*----------------------------------------------------------------------------------------*/
+
+DIGITAL_OUTPUT 	_SKIP_,Is_Communicating, _SKIP_, Is_Initialized,_SKIP_, Power_Is_On, _SKIP_, _SKIP_, 
+				_SKIP_, _SKIP_, _SKIP_, Volume_Is_Muted, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, 
+				Message_Box_Is_On, _SKIP_, _SKIP_, _SKIP_, Is_Polling, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, 
+				Video_Inputs_FB[MAX_VIDEO_SOURCES],	_SKIP_,	Audio_Inputs_FB[MAX_AUDIO_SOURCES], _SKIP_, 
+				MultiSource_Views_FB[MAX_MS_VIEWS], _SKIP_,	MultiSource_Select_2_FB[MAX_VIDEO_SOURCES], _SKIP_, 
+				MultiSource_Select_3_FB[MAX_VIDEO_SOURCES], _SKIP_,	MultiSource_Select_4_FB[MAX_VIDEO_SOURCES], 
+				_SKIP_, MultiSource_Presets_FB[MAX_MS_PRESETS], _SKIP_,	Power_Save_Configs_FB[MAX_PS_CONFIGS], 
+				_SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_,	_SKIP_, _SKIP_, _SKIP_, _SKIP_, 
+				_SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, 
+				_SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, 
+				_SKIP_, _SKIP_;
+					       
+ANALOG_OUTPUT 	Volume_Level, _SKIP_, Backlight_Level, _SKIP_;
+
+STRING_OUTPUT 	To_Device;
+
+/*******************************************************************************************
+  SOCKETS
+  (Uncomment and define socket definitions as needed)
+*******************************************************************************************/
+// TCP_CLIENT
+// TCP_SERVER
+// UDP_SOCKET
+
+/*******************************************************************************************
+  Parameters
+  (Uncomment and declare parameters as needed)
+*******************************************************************************************/
+
+INTEGER_PARAMETER Volume_Step_Size, Backlight_Step_Size;
+
+/*******************************************************************************************
+  Parameter Properties
+  (Uncomment and declare parameter properties as needed)
+*******************************************************************************************/
+/*
+#BEGIN_PARAMETER_PROPERTIES parameter_variable, parameter_variable, ...
+   // propValidUnits = // unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+   // propDefaultUnit = // unitString, unitDecimal, unitHex, unitPercent, unitCharacter, unitTime or unitTicks;
+   // propBounds = lower_bound , upper_bound;
+   // propDefaultValue = ;  // or, propDefaultValue = "";
+   // propList = // { "value" , "label" } , { "value" , "label" } , ... ;
+   // propShortDescription = "status_bar_hint_text";
+   // #BEGIN_PROP_FULL_DESCRIPTION  line_1...  line_2...  line_n  #END_PROP_FULL_DESCRIPTION
+   // #BEGIN_PROP_NOTES line_1...  line_2...  line_n  #END_PROP_NOTES
+#END_PARAMETER_PROPERTIES
+*/
+
+/*******************************************************************************************
+  Structure Definitions
+  (Uncomment and define structure definitions as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: struct.myString = "";
+*******************************************************************************************/
+
+STRUCTURE _ModuleStatus
+{
+	INTEGER nIsCommunicating;
+	INTEGER nIsInitializing;
+	INTEGER nIsInitialized;	
+	INTEGER nIsParsing;
+	INTEGER nIsHeartbeating;
+	INTEGER nLastOutWasHeartbeat;
+	INTEGER nIsPolling;
+	STRING 	sLastMsgIn[MAX_RESPONSE_SIZE];
+};
+
+STRUCTURE _DeviceStatus
+{
+	INTEGER nPower;
+	INTEGER nVideoInput;
+	INTEGER nAudioInput;
+	INTEGER nVolumeLevel;
+	INTEGER nVolumeMute;
+	INTEGER nBacklightLevel;
+	INTEGER nMSView; 
+	INTEGER nMSSelect2;
+	INTEGER nMSSelect3;
+	INTEGER nMSSelect4;
+	INTEGER nPSConfig; 
+	INTEGER nMessageBox;
+};
+
+STRUCTURE _Queue
+{
+	INTEGER nBusy;
+	INTEGER nHasItems;
+	INTEGER nCommandHead;
+	INTEGER nCommandTail;
+	INTEGER nStatusHead;
+	INTEGER nStatusTail;
+	INTEGER nStrikeCount;
+	STRING  sLastMsgOut[MAX_COMMAND_SIZE];
+};
+
+_ModuleStatus uModule;
+_DeviceStatus uDevice;
+_Queue uQueue;
+
+/*******************************************************************************************
+  Global Variables
+  (Uncomment and declare global variables as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: myString = "";
+*******************************************************************************************/
+
+STRING sCommandQueue[MAX_QUEUE_ITEMS][MAX_COMMAND_SIZE];
+STRING sStatusQueue[MAX_QUEUE_ITEMS][MAX_COMMAND_SIZE];
+
+STRING sVideoInputCommands[MAX_VIDEO_SOURCES][1];
+STRING sAudioInputCommands[MAX_AUDIO_SOURCES][1];
+STRING sMSViewCommands[MAX_MS_VIEWS][1];
+STRING sMSPresetCommands[MAX_MS_PRESETS][1];
+STRING sPSConfigCommands[MAX_PS_CONFIGS][1];
+STRING sRemoteCommands[MAX_REMOTE_COMMANDS][1];
+
+/*******************************************************************************************
+  Functions
+  (Add any additional functions here)
+  Note:  Functions must be physically placed before the location in
+         the code that calls them.
+*******************************************************************************************/
+     
+////////////////////////////////////////////////////////////
+// String Method Helpers
+////////////////////////////////////////////////////////////
+
+INTEGER_FUNCTION contains(STRING matchString, STRING sourceString)
+{
+	RETURN (FIND(matchString,sourceString) > 0); 
+}
+
+STRING_FUNCTION getBoundString(STRING source, STRING startString, STRING endString)
+{
+	INTEGER startIndex;
+	INTEGER endIndex;
+	STRING response[MAX_COMMAND_SIZE];
+                                     
+    response = "";
+
+	IF (LEN(source) > 0)
+	{
+		startIndex = FIND(startString, source);
+		endIndex = FIND(endString, source, startIndex + 1);
+	
+		IF (startIndex > 0 && startIndex < endIndex)
+		{
+			startIndex = startIndex + LEN(startString);
+			response = MID(source, startIndex, endIndex - startIndex);
+		}
+	}
+
+	RETURN (response);
+}   
+
+////////////////////////////////////////////////////////////
+// Protocol Method Helpers	
+////////////////////////////////////////////////////////////
+
+STRING_FUNCTION buildSetMsg(STRING command, STRING value)
+{
+	STRING msg[MAX_COMMAND_SIZE];
+        
+    MAKESTRING(msg, "%s%s", msg, MSG_START);
+    MAKESTRING(msg, "%s%s", msg, MSG_IDT);
+    MAKESTRING(msg, "%s%s", msg, MSG_WRITE);
+    MAKESTRING(msg, "%s%s", msg, command);
+    MAKESTRING(msg, "%s%s", msg, value);
+    MAKESTRING(msg, "%s%s", msg, MSG_END);
+    
+    RETURN (msg);
+}
+
+STRING_FUNCTION buildGetMsg(STRING command)
+{
+	STRING msg[MAX_COMMAND_SIZE];
+    
+    MAKESTRING(msg, "%s%s", msg, MSG_START);
+    MAKESTRING(msg, "%s%s", msg, MSG_IDT);
+    MAKESTRING(msg, "%s%s", msg, MSG_READ);
+    MAKESTRING(msg, "%s%s", msg, command);
+    MAKESTRING(msg, "%s%s", msg, MSG_END);
+    
+    RETURN (msg);
+}
+
+////////////////////////////////////////////////////////////
+// Reset Helpers
+////////////////////////////////////////////////////////////
+
+FUNCTION resetQueue()
+{
+	uQueue.nBusy = FALSE;
+	uQueue.nHasItems = FALSE;
+	uQueue.nCommandHead = 1;
+	uQueue.nCommandTail = 1;
+	uQueue.nStatusHead = 1;
+	uQueue.nStatusTail = 1;
+	uQueue.nStrikeCount = 0;	
+	uQueue.sLastMsgOut = BLANK_STRING;         
+}
+
+FUNCTION resetModule()
+{
+	uModule.nIsCommunicating = FALSE;
+	uModule.nIsInitializing = FALSE;
+	uModule.nIsInitialized = FALSE;
+	uModule.nIsParsing = FALSE;
+	uModule.nIsPolling = FALSE;
+	uModule.sLastMsgIn = BLANK_STRING;
+	
+	Is_Communicating = FALSE;
+	Is_Initialized = FALSE;
+}
+
+FUNCTION resetDevice()
+{
+	INTEGER i;
+	
+	uDevice.nPower = NULL;
+	uDevice.nVideoInput = NULL;
+	uDevice.nAudioInput = NULL;
+	uDevice.nVolumeLevel = NULL;
+	uDevice.nVolumeMute = NULL;
+	uDevice.nBacklightLevel = NULL;
+	uDevice.nMSView = NULL; 
+	uDevice.nMSSelect2 = NULL;
+	uDevice.nMSSelect3 = NULL;
+	uDevice.nMSSelect4 = NULL;
+	uDevice.nPSConfig = NULL;
+	uDevice.nMessageBox = NULL;
+	
+	Power_Is_On = FALSE;
+	Volume_Is_Muted = FALSE;
+	Message_Box_Is_On = FALSE;
+	Volume_Level = 0;
+	Backlight_Level = 0;
+	
+	FOR(i = 1 TO MAX_VIDEO_SOURCES)
+		Video_Inputs_FB[i] = FALSE; 
+	
+	FOR(i = 1 TO MAX_AUDIO_SOURCES)
+		Audio_Inputs_FB[i] = FALSE;
+	
+	FOR(i = 1 TO MAX_MS_VIEWS)
+		MultiSource_Views_FB[i] = FALSE;
+	
+	FOR(i = 1 TO MAX_VIDEO_SOURCES)
+		MultiSource_Select_2_FB[i] = FALSE;
+	
+	FOR(i = 1 TO MAX_VIDEO_SOURCES)
+		MultiSource_Select_3_FB[i] = FALSE;
+		
+	FOR(i = 1 TO MAX_VIDEO_SOURCES)
+		MultiSource_Select_4_FB[i] = FALSE;
+		
+	FOR(i = 1 TO MAX_MS_PRESETS)
+		MultiSource_Presets_FB[i] = FALSE;
+		
+	FOR(i = 1 TO MAX_PS_CONFIGS)
+		Power_Save_Configs_FB[i] = FALSE;
+}
+
+FUNCTION reset()
+{              
+	trace("reset");
+
+	resetQueue();
+    resetModule();
+    resetDevice();
+}
+
+////////////////////////////////////////////////////////////
+// Queue Helpers
+////////////////////////////////////////////////////////////
+
+INTEGER_FUNCTION isQueueEmpty()
+{
+	RETURN (uQueue.nHasItems = FALSE && uQueue.nBusy = FALSE);
+}
+
+STRING_FUNCTION deQueue()
+{
+	STRING sCmd[MAX_COMMAND_SIZE];
+                        
+	sCmd = BLANK_STRING;
+
+	IF (uQueue.nHasItems = TRUE && uQueue.nBusy = FALSE)
+	{        
+		uQueue.nBusy = TRUE;
+
+		// Priority Queue has items
+		IF (uQueue.nCommandHead != uQueue.nCommandTail)
+		{
+			IF (uQueue.nCommandTail = GETNUMARRAYROWS(sCommandQueue))
+				uQueue.nCommandTail = 1;
+			ELSE
+				uQueue.nCommandTail = uQueue.nCommandTail + 1;
+
+			uQueue.sLastMsgOut = sCommandQueue[uQueue.nCommandTail];
+		}
+		// Secondary Queue has items
+		ELSE IF (uQueue.nStatusHead != uQueue.nStatusTail)
+		{
+			IF (uQueue.nStatusTail = GETNUMARRAYROWS(sStatusQueue))
+				uQueue.nStatusTail = 1;
+			ELSE
+				uQueue.nStatusTail = uQueue.nStatusTail + 1;
+
+			uQueue.sLastMsgOut = sStatusQueue[uQueue.nStatusTail];
+		}
+	
+		IF (uQueue.nCommandHead = uQueue.nCommandTail && uQueue.nStatusHead = uQueue.nStatusTail)
+			uQueue.nHasItems = FALSE;         
+        
+		sCmd = uQueue.sLastMsgOut;
+	}
+
+	RETURN (sCmd);
+}
+
+FUNCTION sendNextQueueItem()
+{
+	STRING sOutgoing[MAX_COMMAND_SIZE];
+             
+	sOutgoing = deQueue();
+	
+	IF (LEN(sOutgoing) > 0)
+	{
+		TRACE("sendNextQueueItem() - sending next message");
+        
+        IF(contains(CMD_VERSION, sOutgoing) = TRUE)
+     		uModule.nLastOutWasHeartbeat = TRUE;  	
+        ELSE
+        	uModule.nLastOutWasHeartbeat = FALSE; 
+        
+		MAKESTRING(To_Device, "%s", sOutgoing);
+         
+		WAIT (250, QueueFalseResponse)
+		{
+			IF (uQueue.nBusy = TRUE)
+			{
+				uQueue.nBusy = FALSE;
+				
+				IF (uQueue.nStrikeCount < 3)
+				{
+					uQueue.nStrikeCount = uQueue.nStrikeCount + 1;
+
+					TRACE("Failed Response"); 
+					TRACE("Strike Count[%u]",uQueue.nStrikeCount);
+					
+					//uModule.nIsInitializing = FALSE;
+					
+					sendNextQueueItem();
+				}
+				ELSE
+					reset();
+			}
+		}
+	}
+	ELSE
+		TRACE("sendNextQueueItem() - nothing to send");
+}
+
+FUNCTION enQueue(STRING sCmd, INTEGER bPriority)
+{
+	INTEGER nQueueWasEmpty;
+
+	nQueueWasEmpty = isQueueEmpty();
+    
+	IF (bPriority = TRUE)
+	{
+		IF (uQueue.nCommandHead = GETNUMARRAYROWS(sCommandQueue))
+		{
+			IF (uQueue.nCommandTail != 1)
+			{
+				uQueue.nCommandHead = 1;
+				sCommandQueue[uQueue.nCommandHead] = sCmd;
+				uQueue.nHasItems = TRUE;
+			}
+		}
+		ELSE IF (uQueue.nCommandTail != (uQueue.nCommandHead + 1))
+		{
+			uQueue.nCommandHead = uQueue.nCommandHead + 1;
+			sCommandQueue[uQueue.nCommandHead] = sCmd;
+			uQueue.nHasItems = TRUE;
+		}
+	}
+	ELSE
+	{
+		IF (uQueue.nStatusHead = GETNUMARRAYROWS(sStatusQueue))
+		{
+			IF (uQueue.nStatusTail != 1)
+			{
+				uQueue.nStatusHead = 1;
+				sStatusQueue[uQueue.nStatusHead] = sCmd;
+				uQueue.nHasItems = TRUE;
+			}
+		}
+		ELSE IF (uQueue.nStatusTail != (uQueue.nStatusHead + 1))
+		{
+			uQueue.nStatusHead = uQueue.nStatusHead + 1;
+			sStatusQueue[uQueue.nStatusHead] = sCmd;
+			uQueue.nHasItems = TRUE;
+		}
+	}
+
+	IF (nQueueWasEmpty)
+		sendNextQueueItem();
+}
+
+////////////////////////////////////////////////////////////
+// Device Command Helpers
+////////////////////////////////////////////////////////////
+
+FUNCTION setPower(INTEGER state)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(state = TRUE || state = FALSE)
+	{
+       	SWITCH(state)
+       	{
+      		CASE (TRUE):  MAKESTRING(sCommand,"%s", buildSetMsg(CMD_PWR, CMD_STATE_ON));
+      		CASE (FALSE): MAKESTRING(sCommand,"%s", buildSetMsg(CMD_PWR, CMD_STATE_OFF));		
+       	} 
+       	
+       	enQueue(sCommand, TRUE);
+    }	
+}
+
+FUNCTION getPower()
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+   	MAKESTRING(sCommand,"%s", buildGetMsg(CMD_PWR));
+    enQueue(sCommand, FALSE);		
+}
+
+FUNCTION setVideoInput(INTEGER input)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(input > 0 && input <= MAX_VIDEO_SOURCES)
+		{
+			MAKESTRING(sCommand,"%s", buildSetMsg(CMD_VID_SRC, sVideoInputCommands[input]));
+    		enQueue(sCommand, TRUE);		
+    	}
+	}		
+}
+
+FUNCTION getVideoInput()
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	MAKESTRING(sCommand,"%s", buildGetMsg(CMD_VID_SRC));
+    enQueue(sCommand, FALSE);		
+}
+
+FUNCTION setAudioInput(INTEGER input)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(input > 0 && input <= MAX_AUDIO_SOURCES)
+		{
+			MAKESTRING(sCommand,"%s", buildSetMsg(CMD_AUD_SRC, sAudioInputCommands[input]));
+    		enQueue(sCommand, TRUE);		
+    	}
+	}		
+}
+
+FUNCTION getAudioInput()
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	MAKESTRING(sCommand,"%s", buildGetMsg(CMD_AUD_SRC));
+    enQueue(sCommand, FALSE);		
+}
+
+FUNCTION setVolume(INTEGER level)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(level >= MIN_VOL_LVL && level <= MAX_VOL_LVL)
+		{
+			MAKESTRING(sCommand,"%s", buildSetMsg(CMD_VOL, CHR(level)));
+    		enQueue(sCommand, TRUE);
+		}
+	}
+}
+
+FUNCTION getVolume()
+{
+    STRING sCommand[MAX_COMMAND_SIZE];
+	
+	MAKESTRING(sCommand,"%s", buildGetMsg(CMD_VOL));
+    enQueue(sCommand, FALSE);		
+}
+
+FUNCTION setVolumeMute(INTEGER state)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(state = TRUE || state = FALSE)
+		{
+         	SWITCH(state)
+         	{
+        		CASE (TRUE):  MakeString(sCommand,"%s", buildSetMsg(CMD_MUTE, CMD_STATE_ON));
+        		CASE (FALSE): MakeString(sCommand,"%s", buildSetMsg(CMD_MUTE, CMD_STATE_OFF));		
+         	} 
+         	
+         	enQueue(sCommand, TRUE);
+		}	
+	}		
+}
+
+FUNCTION getVolumeMute()
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	MAKESTRING(sCommand,"%s", buildGetMsg(CMD_MUTE));
+    enQueue(sCommand, FALSE);		
+}
+
+FUNCTION setMultiSourceView(INTEGER view)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(view > 0 && view <= MAX_MS_VIEWS)
+		{
+			MAKESTRING(sCommand,"%s", buildSetMsg(CMD_MS_VIEW, sMSViewCommands[view]));
+    		enQueue(sCommand, TRUE);		
+    	}
+	}		
+}
+
+FUNCTION getMultiSourceView()
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+		
+	MAKESTRING(sCommand,"%s", buildGetMsg(CMD_MS_VIEW));
+    enQueue(sCommand, FALSE);		
+}
+
+FUNCTION setMultiSourceSelect(INTEGER window, INTEGER input)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(window > 0 && window <= MAX_MS_WINDOWS)
+		{
+			IF(input > 0 && input <= MAX_VIDEO_SOURCES)
+			{
+	         	SWITCH(window)
+	         	{
+	        		CASE (1): MAKESTRING(sCommand,"%s", buildSetMsg(CMD_MS_SELECT_2, sVideoInputCommands[input]));
+	        		CASE (2): MAKESTRING(sCommand,"%s", buildSetMsg(CMD_MS_SELECT_3, sVideoInputCommands[input]));
+	        		CASE (3): MAKESTRING(sCommand,"%s", buildSetMsg(CMD_MS_SELECT_4, sVideoInputCommands[input])); 		
+	         	} 
+	         	
+	         	enQueue(sCommand, TRUE);
+	        }
+		} 
+	}		
+}
+
+FUNCTION getMultiSourceSelect(INTEGER window)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+    IF(window > 0 && window <= MAX_MS_WINDOWS)
+	{
+       	SWITCH(window)
+       	{
+      		CASE (1): MAKESTRING(sCommand,"%s", buildGetMsg(CMD_MS_SELECT_2));
+      		CASE (2): MAKESTRING(sCommand,"%s", buildGetMsg(CMD_MS_SELECT_3));
+      		CASE (3): MAKESTRING(sCommand,"%s", buildGetMsg(CMD_MS_SELECT_4)); 		
+       	} 
+       	
+       	enQueue(sCommand, FALSE);
+	} 		
+}
+
+FUNCTION setMultiSourcePreset(INTEGER preset)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(preset > 0 && preset <= MAX_MS_PRESETS)
+		{
+		    MAKESTRING(sCommand,"%s", buildSetMsg(CMD_MS_PRESET, sMSPresetCommands[preset]));
+    		enQueue(sCommand, TRUE);
+		}
+	}		
+}
+
+FUNCTION setPowerSaveConfig(INTEGER config)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(config > 0 && config <= MAX_PS_CONFIGS)
+		{
+		    MAKESTRING(sCommand,"%s", buildSetMsg(CMD_PWR_SAVE, sPSConfigCommands[config]));
+    		enQueue(sCommand, TRUE);
+		}
+	}		
+}
+
+FUNCTION getPowerSaveConfig()
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	MAKESTRING(sCommand,"%s", buildGetMsg(CMD_PWR_SAVE));
+    enQueue(sCommand, FALSE);		
+}
+
+FUNCTION sendIR(INTEGER irFunction)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(irFunction > 0 && irFunction <= MAX_REMOTE_COMMANDS)
+		{
+		    MAKESTRING(sCommand,"%s", buildSetMsg(CMD_REMOTE, sRemoteCommands[irFunction]));
+    		enQueue(sCommand, TRUE);
+		}
+	}		
+}
+
+FUNCTION setBacklight(INTEGER level)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(Is_Initialized = TRUE)
+	{
+		IF(level >= MIN_BACKLIGHT_LVL && level <= MAX_BACKLIGHT_LVL)
+		{
+			MAKESTRING(sCommand,"%s", buildSetMsg(CMD_BACKLIGHT, CHR(level)));
+    		enQueue(sCommand, TRUE);
+		}
+	}
+}
+
+FUNCTION getBacklight()
+{
+    STRING sCommand[MAX_COMMAND_SIZE];
+	
+	MAKESTRING(sCommand,"%s", buildGetMsg(CMD_BACKLIGHT));
+    enQueue(sCommand, FALSE);		
+}
+
+FUNCTION setMessageBox(INTEGER state)
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+	IF(state = TRUE || state = FALSE)
+	{
+       	SWITCH(state)
+       	{
+      		CASE (TRUE):  MAKESTRING(sCommand,"%s", buildSetMsg(CMD_MSG_BOX, CMD_STATE_ON));
+      		CASE (FALSE): MAKESTRING(sCommand,"%s", buildSetMsg(CMD_MSG_BOX, CMD_STATE_OFF));		
+       	} 
+       	
+       	enQueue(sCommand, TRUE);
+    }	
+}
+
+FUNCTION getMessageBox()
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+	
+   	MAKESTRING(sCommand,"%s", buildGetMsg(CMD_MSG_BOX));
+    enQueue(sCommand, FALSE);		
+}
+
+
+////////////////////////////////////////////////////////////
+// Polling Helpers
+////////////////////////////////////////////////////////////
+
+FUNCTION getCurrentStatusAll()
+{
+	INTEGER i;
+	
+	getPower();
+	getVideoInput();
+	getAudioInput();
+	getVolume();
+	getVolumeMute();
+	getBacklight();
+	getMessageBox();
+	getMultiSourceView();
+    getPowerSaveConfig();
+    
+	FOR(i = 1 TO MAX_MS_WINDOWS)
+		getMultiSourceSelect(i);
+}
+
+FUNCTION sendPoll()
+{
+	IF (uModule.nIsPolling = TRUE)
+	{
+		TRACE("sendPoll()");
+		
+		getCurrentStatusAll();
+
+		WAIT (POLL_TIME, POLL)
+			IF (uModule.nIsPolling = TRUE)
+				sendPoll();
+	}
+}
+
+FUNCTION startPoll()
+{
+	IF (uModule.nIsPolling = FALSE)
+	{   
+		uModule.nIsPolling = TRUE; 
+		Is_Polling = TRUE;
+		sendPoll();		
+	}
+}
+
+FUNCTION stopPoll()
+{
+	uModule.nIsPolling = FALSE;
+	Is_Polling = FALSE;
+	CANCELWAIT(POLL);
+}
+
+////////////////////////////////////////////////////////////
+// Initialize Helpers
+////////////////////////////////////////////////////////////
+
+INTEGER_FUNCTION isInitialized()
+{
+	IF(	uDevice.nPower = NULL || uDevice.nVideoInput = NULL || uDevice.nAudioInput = NULL || uDevice.nVolumeLevel = NULL ||
+		uDevice.nVolumeMute = NULL || uDevice.nMSView = NULL || uDevice.nMSSelect2 = NULL || uDevice.nMSSelect3 = NULL ||
+		uDevice.nMSSelect4 = NULL || uDevice.nPSConfig = NULL || uDevice.nBacklightLevel = NULL || uDevice.nMessageBox = NULL)
+			RETURN (FALSE);
+	
+	RETURN (TRUE);
+}
+
+FUNCTION getInitialized()
+{
+	TRACE("getInitialized()");
+
+	IF(uModule.nIsInitializing = FALSE && isInitialized() = FALSE)
+	{
+	    TRACE("passed test");
+	    
+	    uModule.nIsInitializing = TRUE;
+		getCurrentStatusAll();
+	}
+}
+
+////////////////////////////////////////////////////////////
+// Response Helpers
+////////////////////////////////////////////////////////////
+
+FUNCTION goodResponse()
+{
+	TRACE("goodResponse()");
+
+   	uModule.nIsCommunicating = TRUE; 
+   	Is_Communicating = TRUE; 
+    
+	uQueue.nStrikeCount = 0; 
+    
+    TRACE("uModule.nLastOutWasHeartbeat[%u]",uModule.nLastOutWasHeartbeat);
+    TRACE("uDevice.nPower[%u]",uDevice.nPower);
+    TRACE("uModule.nIsInitializing[%u]",uModule.nIsInitializing);
+     
+    IF(uModule.nLastOutWasHeartbeat = TRUE && uModule.nIsInitializing = FALSE)
+    	getInitialized();
+    
+	uQueue.nBusy = FALSE;
+
+	sendNextQueueItem();
+}
+
+FUNCTION ProcessDeviceMsg()
+{
+	STRING sStatus[MAX_COMMAND_SIZE];
+	INTEGER nStatus;
+	INTEGER i;
+	
+	IF (LEN(uModule.sLastMsgIn) > 0)
+	{		
+		IF(contains(MSG_END, uModule.sLastMsgIn) = TRUE)
+		{
+	        IF(contains(CMD_PWR, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_PWR, MSG_END);
+				
+				IF(sStatus = CMD_STATE_ON)
+            	{
+            		uDevice.nPower = TRUE;
+            		Power_Is_On = TRUE;
+            	}
+	            ELSE IF(sStatus = CMD_STATE_OFF)
+				{
+					uDevice.nPower = FALSE;
+					Power_Is_On = FALSE;			
+				}
+			}
+			ELSE IF(contains(CMD_VOL, uModule.sLastMsgIn) = TRUE)
+			{
+				nStatus = BYTE(uModule.sLastMsgIn, MSG_LOC_STATUS); 
+				
+               	uDevice.nVolumeLevel = nStatus;
+               	Volume_Level = nStatus;
+			}
+			ELSE IF(contains(CMD_MUTE, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_MUTE, MSG_END);
+				
+				IF(sStatus = CMD_STATE_ON)
+            	{
+            		uDevice.nVolumeMute = TRUE;
+            		Volume_Is_Muted = TRUE;
+            	}
+	            ELSE IF(sStatus = CMD_STATE_OFF)
+				{
+					uDevice.nVolumeMute = FALSE;
+					Volume_Is_Muted = FALSE;
+				}
+			}
+			ELSE IF(contains(CMD_BACKLIGHT, uModule.sLastMsgIn) = TRUE)
+			{
+				nStatus = BYTE(uModule.sLastMsgIn, MSG_LOC_STATUS); 
+				
+               	uDevice.nBacklightLevel = nStatus;
+               	Backlight_Level = nStatus;
+			}
+			ELSE IF(contains(CMD_VID_SRC, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_VID_SRC, MSG_END);
+				
+				FOR(i = 1 TO MAX_VIDEO_SOURCES)
+                {
+                	IF(sStatus = sVideoInputCommands[i])
+                	{
+               			uDevice.nVideoInput = i;
+               			Video_Inputs_FB[i] = TRUE; 		
+                	}
+                	ELSE
+                 		Video_Inputs_FB[i] = FALSE;
+                }
+			}
+			ELSE IF(contains(CMD_AUD_SRC, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_AUD_SRC, MSG_END);
+				
+				FOR(i = 1 TO MAX_AUDIO_SOURCES)
+                {
+                	IF(sStatus = sAudioInputCommands[i])
+                	{
+               			uDevice.nAudioInput = i;
+               			Audio_Inputs_FB[i] = TRUE; 		
+                	}
+                	ELSE
+                		Audio_Inputs_FB[i] = FALSE;
+                }
+
+			}
+			ELSE IF(contains(CMD_MS_VIEW, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_MS_VIEW, MSG_END);
+				
+				FOR(i = 1 TO MAX_MS_VIEWS)
+                {
+                	IF(sStatus = sMSViewCommands[i])
+                	{
+               			uDevice.nMSView = i;
+               			MultiSource_Views_FB[i] = TRUE; 		
+                	}
+                	ELSE
+                		MultiSource_Views_FB[i] = FALSE;
+                }
+			}
+			ELSE IF(contains(CMD_MS_SELECT_2, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_MS_SELECT_2, MSG_END);
+				
+				FOR(i = 1 TO MAX_VIDEO_SOURCES)
+                {
+                	IF(sStatus = sVideoInputCommands[i])
+                	{
+               			uDevice.nMSSelect2 = i;
+               			MultiSource_Select_2_FB[i] = TRUE; 		
+                	}
+                	ELSE
+                		MultiSource_Select_2_FB[i] = FALSE;
+                }
+			}
+			ELSE IF(contains(CMD_MS_SELECT_3, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_MS_SELECT_3, MSG_END);
+				
+				FOR(i = 1 TO MAX_VIDEO_SOURCES)
+                {
+                	IF(sStatus = sVideoInputCommands[i])
+                	{
+               			uDevice.nMSSelect3 = i;
+               			MultiSource_Select_3_FB[i] = TRUE; 		
+                	}
+                	ELSE
+                		MultiSource_Select_3_FB[i] = FALSE;
+                }
+			}
+			ELSE IF(contains(CMD_MS_SELECT_4, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_MS_SELECT_4, MSG_END);
+				
+				FOR(i = 1 TO MAX_VIDEO_SOURCES)
+                {
+                	IF(sStatus = sVideoInputCommands[i])
+                	{
+               			uDevice.nMSSelect4 = i;
+               			MultiSource_Select_4_FB[i] = TRUE; 		
+                	}
+                	ELSE
+                		MultiSource_Select_4_FB[i] = FALSE;
+                }
+			}
+			ELSE IF(contains(CMD_MS_PRESET, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_MS_PRESET, MSG_END);
+				
+				FOR(i = 1 TO MAX_MS_PRESETS)
+                {
+                	IF(sStatus = sMSPresetCommands[i])
+               			PULSE(10, MultiSource_Presets_FB[i]); 		
+                }
+			}
+			ELSE IF(contains(CMD_PWR_SAVE, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_PWR_SAVE, MSG_END);
+				
+				FOR(i = 1 TO MAX_PS_CONFIGS)
+                {
+                	IF(sStatus = sPSConfigCommands[i])
+                	{
+               			uDevice.nPSConfig = i;
+               			Power_Save_Configs_FB[i] = TRUE; 		
+                	}
+                	ELSE
+                		Power_Save_Configs_FB[i] = FALSE;
+                }
+			} 
+			IF(contains(CMD_MSG_BOX, uModule.sLastMsgIn) = TRUE)
+			{
+				sStatus = getBoundString(uModule.sLastMsgIn, CMD_MSG_BOX, MSG_END);
+				
+				IF(sStatus = CMD_STATE_ON)
+            	{
+            		uDevice.nMessageBox = TRUE;
+            		Message_Box_Is_On = TRUE;
+            	}
+	            ELSE IF(sStatus = CMD_STATE_OFF)
+				{
+					uDevice.nMessageBox = FALSE;
+					Message_Box_Is_On = FALSE;			
+				}
+			}
+			
+			CANCELWAIT(QueueFalseResponse);
+			goodResponse();
+			
+			IF(uModule.nIsInitializing = TRUE && isInitialized() = TRUE)
+			{
+				trace("initialization complete");
+				
+				uModule.nIsInitializing = FALSE;
+				uModule.nIsInitialized = TRUE;
+				Is_Initialized = TRUE;
+				
+				IF(Poll_Enable = TRUE && uModule.nIsPolling = FALSE)
+					WAIT(POLL_TIME, StartPollingProcess)
+						startPoll();
+			}			
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////
+// Heartbeat Helpers
+//////////////////////////////////////////////////////////// 
+
+FUNCTION sendHeartbeat()
+{
+	STRING sCommand[MAX_COMMAND_SIZE];
+
+	IF (uModule.nIsHeartbeating = TRUE)
+	{
+		IF (isQueueEmpty())
+		{
+			TRACE("sendHeartbeat()");
+			
+			MAKESTRING(sCommand,"%s", buildGetMsg(CMD_VERSION));                               
+			enQueue(sCommand, FALSE);
+		}
+
+		WAIT (HEARTBEAT_TIME, HEARTBEAT)
+			IF (uModule.nIsHeartbeating = TRUE)
+				sendHeartbeat();
+	}		
+}    
+
+FUNCTION startHeartbeat()
+{
+	IF (uModule.nIsHeartbeating = FALSE)
+	{   
+		uModule.nIsHeartbeating = TRUE;
+		sendHeartbeat();		
+	}
+}
+
+FUNCTION stopHeartbeat()
+{
+	uModule.nIsHeartbeating = FALSE;
+	CANCELWAIT(HEARTBEAT);
+}
+
+////////////////////////////////////////////////////////////
+// Connect/Disconnect/Reinit Helpers
+////////////////////////////////////////////////////////////
+
+FUNCTION doConnect()
+{
+	TRACE("doConnect()");
+		
+	reset();
+	CANCELWAIT(QueueFalseResponse);
+	
+	WAIT(500, StartHeartBeatProcess)
+		startHeartbeat();
+}   
+
+FUNCTION doDisconnect()
+{
+	TRACE("doDisconnect()");
+	
+	reset();
+	CANCELWAIT(StartHeartBeatProcess);
+	CANCELWAIT(StartPollingProcess);
+	CANCELWAIT(QueueFalseResponse);
+	stopHeartbeat();
+	stopPoll();
+}
+
+FUNCTION doReinitialize()
+{
+	TRACE("doReinitialize()");
+
+	doDisconnect();
+	doConnect();	
+}
+
+/*******************************************************************************************
+  Event Handlers
+  (Uncomment and declare additional event handlers as needed)
+*******************************************************************************************/
+
+PUSH Connect
+{
+    doConnect();	
+}
+
+PUSH Disconnect
+{
+	doDisconnect();
+}
+
+PUSH Initialize
+{
+	doReinitialize();
+}
+
+PUSH Power_On
+{
+    setPower(TRUE);
+}
+
+PUSH Power_Off
+{
+    setPower(FALSE);
+}
+
+PUSH Power_Toggle
+{
+    IF(uDevice.nPower = TRUE)
+    	setPower(FALSE); 
+   	ELSE IF(uDevice.nPower = FALSE)
+    	setPower(TRUE);
+}
+
+PUSH Volume_Up
+{
+    IF(uDevice.nVolumeLevel < MAX_VOL_LVL)
+    {
+  		IF((MAX_VOL_LVL - uDevice.nVolumeLevel) > Volume_Step_Size)
+    		setVolume(uDevice.nVolumeLevel + Volume_Step_Size);
+    	ELSE
+    		setVolume(MAX_VOL_LVL);  	
+    }
+}
+
+PUSH Volume_Down
+{
+    IF(uDevice.nVolumeLevel > MIN_VOL_LVL)
+    {
+  		IF((uDevice.nVolumeLevel - MIN_VOL_LVL) > Volume_Step_Size)
+    		setVolume(uDevice.nVolumeLevel - Volume_Step_Size);
+    	ELSE
+    		setVolume(MIN_VOL_LVL);  	
+    }
+}
+
+CHANGE Volume_Set
+{
+    IF(Volume_Set >= MIN_VOL_LVL && Volume_Set <= MAX_VOL_LVL)
+    	setVolume(Volume_Set);
+}
+
+PUSH Volume_Mute_On
+{
+    setVolumeMute(TRUE);
+}
+
+PUSH Volume_Mute_Off
+{
+    setVolumeMute(FALSE);
+}
+ 
+PUSH Volume_Mute_Toggle
+{
+    IF(uDevice.nVolumeMute = TRUE)
+    	setVolumeMute(FALSE); 
+   	ELSE IF(uDevice.nVolumeMute = FALSE)
+    	setVolumeMute(TRUE);
+}
+
+PUSH Backlight_Up
+{
+    IF(uDevice.nBacklightLevel < MAX_BACKLIGHT_LVL)
+    {
+  		IF((MAX_BACKLIGHT_LVL - uDevice.nBacklightLevel) > Backlight_Step_Size)
+    		setBacklight(uDevice.nBacklightLevel + Backlight_Step_Size);
+    	ELSE
+    		setBacklight(MAX_BACKLIGHT_LVL);  	
+    }
+}
+
+PUSH Backlight_Down
+{
+    IF(uDevice.nBacklightLevel > MIN_BACKLIGHT_LVL)
+    {
+  		IF((uDevice.nBacklightLevel - MIN_BACKLIGHT_LVL) > Backlight_Step_Size)
+    		setBacklight(uDevice.nBacklightLevel - Backlight_Step_Size);
+    	ELSE
+    		setBacklight(MIN_BACKLIGHT_LVL);  	
+    }
+}
+
+CHANGE Backlight_Set
+{
+    IF(Backlight_Set >= MIN_BACKLIGHT_LVL && Backlight_Set <= MAX_BACKLIGHT_LVL)
+    	setBacklight(Backlight_Set);
+}
+
+PUSH Video_Inputs
+{
+    INTEGER input;
+    input = GETLASTMODIFIEDARRAYINDEX();
+    
+    setVideoInput(input);
+}
+
+PUSH Video_Input_Cycle
+{
+    IF(uDevice.nVideoInput != NULL)
+    {
+    	IF(uDevice.nVideoInput = MAX_VIDEO_SOURCES)
+    		setVideoInput(1);
+    	ELSE
+    		setVideoInput(uDevice.nVideoInput + 1);
+    }
+}
+
+PUSH Audio_Inputs
+{
+    INTEGER input;
+    input = GETLASTMODIFIEDARRAYINDEX();
+    
+    setAudioInput(input);
+}
+
+PUSH MultiSource_Views
+{
+    INTEGER view;
+    view = GETLASTMODIFIEDARRAYINDEX();
+    
+    setMultiSourceView(view);
+}
+
+PUSH MultiSource_Views_Cycle
+{
+    IF(uDevice.nMSView != NULL)
+    {
+    	IF(uDevice.nMSView = MAX_MS_VIEWS)
+    		setMultiSourceView(1);
+    	ELSE
+    		setMultiSourceView(uDevice.nMSView + 1);
+    }
+}
+
+PUSH MultiSource_Select_2
+{
+    INTEGER input;
+    input = GETLASTMODIFIEDARRAYINDEX();
+    
+    setMultiSourceSelect(1, input);
+}
+
+PUSH MultiSource_Select_3
+{
+    INTEGER input;
+    input = GETLASTMODIFIEDARRAYINDEX();
+    
+    setMultiSourceSelect(2, input);
+}
+
+PUSH MultiSource_Select_4
+{
+    INTEGER input;
+    input = GETLASTMODIFIEDARRAYINDEX();
+    
+    setMultiSourceSelect(3, input);
+}
+
+PUSH MultiSource_Presets
+{
+    INTEGER preset;
+    preset = GETLASTMODIFIEDARRAYINDEX();
+    
+    setMultiSourcePreset(preset);
+}
+
+PUSH Power_Save_Configs
+{
+    INTEGER config;
+    config = GETLASTMODIFIEDARRAYINDEX();
+    
+    setPowerSaveConfig(config);
+}
+
+PUSH Power_Save_Configs_Cycle
+{
+    IF(uDevice.nPSConfig != NULL)
+    {
+    	IF(uDevice.nPSConfig = MAX_PS_CONFIGS)
+    		setPowerSaveConfig(1);
+    	ELSE
+    		setPowerSaveConfig(uDevice.nPSConfig + 1);
+    }
+}
+
+PUSH Remote_Commands
+{
+	INTEGER irFunction;
+    irFunction = GETLASTMODIFIEDARRAYINDEX();
+    
+    sendIR(irFunction);
+}
+
+PUSH Message_Box_On
+{
+    setMessageBox(TRUE);
+}
+
+PUSH Message_Box_Off
+{
+    setMessageBox(FALSE);
+}
+
+PUSH Message_Box_Toggle
+{
+    IF(uDevice.nMessageBox = TRUE)
+    	setMessageBox(FALSE); 
+   	ELSE IF(uDevice.nMessageBox = FALSE)
+    	setMessageBox(TRUE);
+}
+ 
+PUSH Poll_Enable
+{
+    IF(uModule.nIsPolling = FALSE)
+    	startPoll();
+}
+
+RELEASE Poll_Enable
+{
+    IF(uModule.nIsPolling = TRUE)
+    	stopPoll();
+}
+
+#IF_SERIES3
+THREADSAFE CHANGE From_Device
+{           
+	STRING 	msgToCmdEnd[MAX_COMMAND_SIZE];
+	STRING 	msgRemainder[MAX_COMMAND_SIZE];
+	
+	WHILE(TRUE)
+	{
+		TRY                       
+		{
+			msgToCmdEnd = GATHERBYLENGTH(MSG_LOC_CMD_END, From_Device);
+			
+			// CMD_VERSION gives 6 byte response + 1 for delimiter
+			IF(contains(CMD_VERSION, msgToCmdEnd) = TRUE)
+				msgRemainder = GATHERBYLENGTH(7, From_Device);			
+			
+			// CMD_SERIAL_NUM & CMD_MODEL_NAME give 13 byte response + 1 for delimiter
+			ELSE IF(contains(CMD_SERIAL_NUM, msgToCmdEnd) = TRUE || contains(CMD_MODEL_NAME, msgToCmdEnd) = TRUE)
+				msgRemainder = GATHERBYLENGTH(14, From_Device);
+				
+			// all other command gives 1 byte response + 1 for delimiter				
+            ELSE
+				msgRemainder = GATHERBYLENGTH(2, From_Device);			
+			
+			MAKESTRING(uModule.sLastMsgIn,"%s%s", msgToCmdEnd, msgRemainder);
+			ProcessDeviceMsg();													
+		}
+		CATCH
+		{
+			TRACE("Issue with Device message handling\n");
+		}		
+	}
+}
+#ELSE
+CHANGE From_Device
+{
+    STRING 	msgToCmdEnd[MAX_COMMAND_SIZE];
+	STRING 	msgRemainder[MAX_COMMAND_SIZE];
+	
+    IF (uModule.nIsParsing = FALSE)
+    {
+    	uModule.nIsParsing = TRUE;
+    	
+    	WHILE(TRUE)
+    	{
+			msgToCmdEnd = GATHERBYLENGTH(MSG_LOC_CMD_END, From_Device);
+			
+			// CMD_VERSION gives 6 byte response + 1 for delimiter
+			IF(contains(CMD_VERSION, msgToCmdEnd) = TRUE)
+				msgRemainder = GATHERBYLENGTH(7, From_Device);			
+			
+			// CMD_SERIAL_NUM & CMD_MODEL_NAME give 13 byte response + 1 for delimiter
+			ELSE IF(contains(CMD_SERIAL_NUM, msgToCmdEnd) = TRUE || contains(CMD_MODEL_NAME, msgToCmdEnd) = TRUE)
+				msgRemainder = GATHERBYLENGTH(14, From_Device);
+				
+			// all other command gives 1 byte response + 1 for delimiter				
+            ELSE
+				msgRemainder = GATHERBYLENGTH(2, From_Device);			
+			
+			MAKESTRING(uModule.sLastMsgIn,"%s%s", msgToCmdEnd, msgRemainder);
+			ProcessDeviceMsg();
+		}
+    	
+    	uModule.nIsParsing = FALSE;
+    }
+}
+#ENDIF
+
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+
+FUNCTION Main()
+{
+	sVideoInputCommands[1] 	= "\x00";	// VGA
+	sVideoInputCommands[2] 	= "\x0D";	// DisplayPort
+	sVideoInputCommands[3] 	= "\x0E";	// OPS
+	sVideoInputCommands[4] 	= "\x09";	// HDMI 1
+	sVideoInputCommands[5] 	= "\x0A";	// HDMI 2
+	sVideoInputCommands[6] 	= "\x0B";	// HDMI 3
+	sVideoInputCommands[7] 	= "\x0C";	// HDMI 4
+
+    sAudioInputCommands[1] 	= "\x00";	// Line In
+	sAudioInputCommands[2] 	= "\x01";	// HDMI 1
+	sAudioInputCommands[3] 	= "\x02";	// HDMI 2
+	sAudioInputCommands[4] 	= "\x03";	// HDMI 3
+	sAudioInputCommands[5] 	= "\x04";	// HDMI 4
+	sAudioInputCommands[6] 	= "\x05";	// DisplayPort
+	sAudioInputCommands[7] 	= "\x07";	// OPS
+
+    sMSViewCommands[1] 	   	= "\x00";	// Off
+    sMSViewCommands[2] 	   	= "\x01";	// PiP Small
+	sMSViewCommands[3] 	   	= "\x02";	// PiP Medium
+	sMSViewCommands[4] 	   	= "\x03";	// PiP Large
+	sMSViewCommands[5] 	   	= "\x04";	// Dual
+	sMSViewCommands[6] 	   	= "\x05";	// Dual Portrait
+	sMSViewCommands[7] 	   	= "\x06";	// Triple
+	sMSViewCommands[8] 	   	= "\x07";	// Quad
+
+    sMSPresetCommands[1] 	= "\x00";	// Preset 1
+    sMSPresetCommands[2] 	= "\x01";	// Preset 2
+    sMSPresetCommands[3] 	= "\x02";	// Preset 3
+    sMSPresetCommands[4] 	= "\x03";	// Preset 4
+    
+    sPSConfigCommands[1] 	= "\x00";	// Wake VGA
+    sPSConfigCommands[2] 	= "\x01";	// Wake All
+    sPSConfigCommands[3] 	= "\x02";	// Always On
+    
+    sRemoteCommands[1] 		= "\x0E";	// Menu
+    sRemoteCommands[2] 		= "\x04";	// Info
+    sRemoteCommands[3] 		= "\x02";	// Up
+    sRemoteCommands[4] 		= "\x19";	// Down
+    sRemoteCommands[5] 		= "\x01";	// Left
+    sRemoteCommands[6] 		= "\x03";	// Right
+    sRemoteCommands[7] 		= "\x12";	// Enter
+    sRemoteCommands[8] 		= "\x05";	// Exit
+    sRemoteCommands[9] 		= "\x07";	// VGA
+    sRemoteCommands[10] 	= "\x09";	// HDMI 1
+    sRemoteCommands[11] 	= "\x0C";	// HDMI 2
+    sRemoteCommands[12] 	= "\x10";	// HDMI 3
+    sRemoteCommands[13] 	= "\x16";	// HDMI 4
+    sRemoteCommands[14] 	= "\x08";	// DisplayPort
+    sRemoteCommands[15] 	= "\x15";	// OPS
+    sRemoteCommands[16] 	= "\x0F";	// Source
+    sRemoteCommands[17] 	= "\x13";	// P-Source
+    sRemoteCommands[18] 	= "\x11";	// PiP
+    sRemoteCommands[19] 	= "\x1A";	// P-Position
+    sRemoteCommands[20] 	= "\x06";	// Swap
+    sRemoteCommands[21] 	= "\x14";	// Aspect Ratio
+    sRemoteCommands[22] 	= "\x43";	// Freeze
+    sRemoteCommands[23] 	= "\x00";	// Mute
+    sRemoteCommands[24] 	= "\x17";	// Brightness
+    sRemoteCommands[25] 	= "\x18";	// Contrast
+    sRemoteCommands[26] 	= "\x1E";	// Auto
+    sRemoteCommands[27] 	= "\x1D";	// Volume Up
+    sRemoteCommands[28] 	= "\x1B";	// Volume Down
+    sRemoteCommands[29] 	= "\x20";	// Preset 1
+    sRemoteCommands[30] 	= "\x21";	// Preset 2
+    sRemoteCommands[31] 	= "\x22";	// Preset 3
+    sRemoteCommands[32] 	= "\x23";	// Preset 4
+    sRemoteCommands[33] 	= "\x24";	// Audio Source Main
+    sRemoteCommands[34] 	= "\x25";	// Audio Source 2
+    sRemoteCommands[35] 	= "\x26";	// Audio Source 3
+    sRemoteCommands[36] 	= "\x27";	// Audio Source 4
+ 
+	uModule.nIsHeartbeating = FALSE;
+	uModule.nIsPolling = FALSE;
+	
+	reset();
+	
+	WAITFORINITIALIZATIONCOMPLETE();
+}
+
