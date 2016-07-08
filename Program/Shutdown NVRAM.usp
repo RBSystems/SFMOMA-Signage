@@ -1,0 +1,110 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name: BBI Engineering, Inc.
+System Name:
+System Number:
+Programmer: Sam Wong
+Comments:
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+// #ENABLE_DYNAMIC
+#SYMBOL_NAME "Shutdown NVRAM"
+// #HINT ""
+// #DEFINE_CONSTANT
+// #CATEGORY "" 
+#CATEGORY "9" // Memory
+// #PRINT_TO_TRACE
+// #DIGITAL_EXPAND 
+// #ANALOG_SERIAL_EXPAND 
+// #OUTPUT_SHIFT 
+// #HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+// #ENCODING_ASCII
+// #ENCODING_UTF16
+// #ENCODING_INHERIT_FROM_PARENT
+// #ENCODING_INHERIT_FROM_PROGRAM
+
+#HELP_BEGIN
+   Nonvolatile storage of shutdown hour, minute and enable.
+#HELP_END
+
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+  (Uncomment and declare inputs and outputs as needed)
+*******************************************************************************************/
+DIGITAL_INPUT Enable_On, Enable_Off, Enable_Toggle;
+ANALOG_INPUT Hour, Minute;
+// STRING_INPUT 
+// BUFFER_INPUT 
+
+DIGITAL_OUTPUT Enable_NV;
+ANALOG_OUTPUT Hour_NV, Minute_NV;
+
+/*******************************************************************************************
+  Global Variables
+  (Uncomment and declare global variables as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: myString = "";
+*******************************************************************************************/
+nonvolatile INTEGER nvEnable;
+nonvolatile INTEGER nvHour, nvMinute;
+
+/*******************************************************************************************
+  Event Handlers
+  (Uncomment and declare additional event handlers as needed)
+*******************************************************************************************/
+
+PUSH Enable_On
+{
+    nvEnable = 1;
+	Enable_NV = 1;
+}
+ 
+PUSH Enable_Off
+{
+	nvEnable = 0;
+	Enable_NV = 0;
+}
+
+PUSH Enable_Toggle
+{
+	nvEnable = !nvEnable;
+	Enable_NV = nvEnable;
+}
+
+CHANGE Hour
+{
+	nvHour = Hour;
+	Hour_NV = nvHour;
+}
+
+CHANGE Minute
+{
+	nvMinute = Minute;
+	Minute_NV = nvMinute;
+}
+
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	Enable_NV = nvEnable;
+	Hour_NV = nvHour;
+	Minute_NV = nvMinute;
+}
+

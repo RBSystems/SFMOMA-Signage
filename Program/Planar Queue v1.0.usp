@@ -1,0 +1,39 @@
+#CATEGORY "24" // TV/Video Projector
+//SK
+//Simplified Concepts
+                 
+//#enable_stack_checking                 
+#default_volatile
+
+#define_constant delimiter "\r" 
+ 
+digital_input b, hold;   
+buffer_input command[2048];
+
+//digital_output  
+analog_output a;
+string_output tx;
+
+//integer  
+//string
+
+//begin function logic**************************************************************************************************
+
+//begin event logic*****************************************************************************************************
+
+//begin main************************************************************************************************************
+
+function main()
+ {         
+  signed_integer code;     
+  string packet[255];
+  a=off;      
+  code=waitforinitializationcomplete(); 
+  while(1)
+   {  
+    packet=gather(delimiter,command);
+    while(a=on || b=on || hold=on)delay(25); 
+    tx=packet; 
+    a=on;
+   }  
+ } 

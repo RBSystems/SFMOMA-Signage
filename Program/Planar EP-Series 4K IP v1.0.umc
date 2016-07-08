@@ -1,0 +1,4629 @@
+[
+Version=1
+]
+[
+ObjTp=FSgntr
+Sgntr=UserMacro
+RelVrs=4.03.14
+IntStrVrs=2
+MinSMWVrs=3.00.00
+MinTIOVrs=0
+SavedBy=SMW4.03.14
+]
+[
+ObjTp=Hd
+S0Nd=1
+S1Nd=2
+SLNd=3
+PrNm=Planar EP-Series 4K IP v1.0.umc
+DbVr=52.05.013.00
+DvcDbVr=67.00.001.00
+PgmNm=DG
+DlrNm=Crestron Electronics
+CltNm=Planar EP-Series 4K IP v1.0
+Incl=362,378,380,405,407,408,409,478,522,537,554,586,590,611,624,767,830,883,1032,1062,1079,1134,1157,1199,1220,1222,1299,1348,1439,1472,1473,1499,1746,1803,1975,2229,2354,2514,2523,2532,3708,3902,3912,3918,3925,1766,2574,2651,2817,2886,2938,2947,3181,3197,3233,3710,3735,3736,3816,3888,4176,4308,4476,4591,4769,
+McNm=Planar EP-Series 4K IP v1.0
+SmVr=956
+DvVr=956
+TpN1=1
+TpN2=2
+TpN3=3
+TpN4=4
+TpN5=5
+PdfHelp=Planar EP-Series 4K IP v1.0 Help.pdf
+DT=Monitor
+DST=LCD Monitor
+Mfg=Planar
+NumMdl=1
+Mdl1=EP-Series 4K
+Tmpl=Monitor
+APg=1
+StdCmd=0
+FltTmp=1
+FpCS=0
+EnType=0
+ZeroOnIoOk=0
+SGMethod=1
+]
+[
+ObjTp=Bk
+Nm1=\
+Sx1=0
+Sy1=0
+Mx1=0
+]
+[
+ObjTp=Bw
+H=1
+Lx=0
+Ly=0
+Rx=1207
+Ry=953
+Xm=-1
+Ym=-1
+SH=6
+Z=100
+P=2248
+Ht=4
+Hi=125
+]
+[
+ObjTp=Symbol
+Name=Planar EP-Series 4K IP v1.0
+Code=1
+SmplCName=Planar EP-Series 4K IP v1.0.umc
+Smpl-C=3
+CompilerTimePrecision=Single_Or_Double_Precision
+Exclusions=1,19,20,21,88,89,167,168,179,213,214,215,216,217,225,226,248,249,266,267,310,718,756,854,
+Hint=Planar EP-Series 4K IP v1.0
+SMWRev=3.00.00
+TIORev=0
+S+=1
+HelpID=1055
+PdfHelp=Planar EP-Series 4K IP v1.0 Help.pdf
+DT=Monitor
+DST=LCD Monitor
+Mfg=Planar
+NumMdl=1
+Mdl1=EP-Series 4K
+Tmpl=Monitor
+APg=1
+StdCmd=0
+FltTmp=1
+FpCS=0
+NumFixedInputs=130
+NumFixedOutputs=130
+NumFixedParams=2
+MinVariableInputs=0
+MinVariableInputsList2=0
+MinVariableInputsList3=0
+MinVariableOutputs=0
+MinVariableOutputsList2=0
+MinVariableOutputsList3=0
+MinVariableParams=0
+SymbolTree=32
+InputSigType1=Digital|Analog|Serial|String
+InputSigType2=Digital|Analog|Serial|String
+InputSigType3=Digital
+InputSigType4=Digital|Analog|Serial|String
+InputSigType5=Digital
+InputSigType6=Digital
+InputSigType7=Digital
+InputSigType8=Digital|Analog|Serial|String
+InputSigType9=Digital
+InputSigType10=Digital
+InputSigType11=Analog
+InputSigType12=Digital|Analog|Serial|String
+InputSigType13=Digital
+InputSigType14=Digital
+InputSigType15=Digital
+InputSigType16=Digital|Analog|Serial|String
+InputSigType17=Digital
+InputSigType18=Digital
+InputSigType19=Analog
+InputSigType20=Digital|Analog|Serial|String
+InputSigType21=Digital
+InputSigType22=Digital
+InputSigType23=Digital
+InputSigType24=Digital|Analog|Serial|String
+InputSigType25=Digital
+InputSigType26=Digital
+InputSigType27=Digital
+InputSigType28=Digital
+InputSigType29=Digital
+InputSigType30=Digital
+InputSigType31=Digital
+InputSigType32=Digital
+InputSigType33=Digital|Analog|Serial|String
+InputSigType34=Digital
+InputSigType35=Digital
+InputSigType36=Digital
+InputSigType37=Digital
+InputSigType38=Digital
+InputSigType39=Digital
+InputSigType40=Digital
+InputSigType41=Digital|Analog|Serial|String
+InputSigType42=Digital
+InputSigType43=Digital
+InputSigType44=Digital
+InputSigType45=Digital
+InputSigType46=Digital
+InputSigType47=Digital
+InputSigType48=Digital
+InputSigType49=Digital
+InputSigType50=Digital
+InputSigType51=Digital|Analog|Serial|String
+InputSigType52=Digital
+InputSigType53=Digital
+InputSigType54=Digital
+InputSigType55=Digital
+InputSigType56=Digital
+InputSigType57=Digital
+InputSigType58=Digital
+InputSigType59=Digital|Analog|Serial|String
+InputSigType60=Digital
+InputSigType61=Digital
+InputSigType62=Digital
+InputSigType63=Digital
+InputSigType64=Digital
+InputSigType65=Digital
+InputSigType66=Digital
+InputSigType67=Digital|Analog|Serial|String
+InputSigType68=Digital
+InputSigType69=Digital
+InputSigType70=Digital
+InputSigType71=Digital
+InputSigType72=Digital
+InputSigType73=Digital
+InputSigType74=Digital
+InputSigType75=Digital|Analog|Serial|String
+InputSigType76=Digital
+InputSigType77=Digital
+InputSigType78=Digital
+InputSigType79=Digital
+InputSigType80=Digital|Analog|Serial|String
+InputSigType81=Digital
+InputSigType82=Digital
+InputSigType83=Digital
+InputSigType84=Digital
+InputSigType85=Digital|Analog|Serial|String
+InputSigType86=Digital
+InputSigType87=Digital
+InputSigType88=Digital
+InputSigType89=Digital
+InputSigType90=Digital
+InputSigType91=Digital
+InputSigType92=Digital
+InputSigType93=Digital
+InputSigType94=Digital
+InputSigType95=Digital
+InputSigType96=Digital
+InputSigType97=Digital
+InputSigType98=Digital
+InputSigType99=Digital
+InputSigType100=Digital
+InputSigType101=Digital
+InputSigType102=Digital
+InputSigType103=Digital
+InputSigType104=Digital
+InputSigType105=Digital
+InputSigType106=Digital
+InputSigType107=Digital
+InputSigType108=Digital
+InputSigType109=Digital
+InputSigType110=Digital
+InputSigType111=Digital
+InputSigType112=Digital
+InputSigType113=Digital
+InputSigType114=Digital
+InputSigType115=Digital
+InputSigType116=Digital
+InputSigType117=Digital
+InputSigType118=Digital
+InputSigType119=Digital
+InputSigType120=Digital
+InputSigType121=Digital
+InputSigType122=Digital|Analog|Serial|String
+InputSigType123=Digital
+InputSigType124=Digital|Analog|Serial|String
+InputSigType125=Digital|Analog|Serial|String
+InputSigType126=Digital|Analog|Serial|String
+InputSigType127=Digital|Analog|Serial|String
+InputSigType128=Digital
+InputSigType129=Analog
+InputSigType130=Serial
+OutputSigType1=Digital
+OutputSigType2=Digital|Analog|Serial|String
+OutputSigType3=Digital
+OutputSigType4=Digital|Analog|Serial|String
+OutputSigType5=Digital
+OutputSigType6=Digital|Analog|Serial|String
+OutputSigType7=Digital|Analog|Serial|String
+OutputSigType8=Digital|Analog|Serial|String
+OutputSigType9=Digital|Analog|Serial|String
+OutputSigType10=Digital|Analog|Serial|String
+OutputSigType11=Analog
+OutputSigType12=Digital|Analog|Serial|String
+OutputSigType13=Digital
+OutputSigType14=Digital|Analog|Serial|String
+OutputSigType15=Digital|Analog|Serial|String
+OutputSigType16=Digital|Analog|Serial|String
+OutputSigType17=Digital|Analog|Serial|String
+OutputSigType18=Digital|Analog|Serial|String
+OutputSigType19=Analog
+OutputSigType20=Digital|Analog|Serial|String
+OutputSigType21=Digital
+OutputSigType22=Digital|Analog|Serial|String
+OutputSigType23=Digital|Analog|Serial|String
+OutputSigType24=Digital|Analog|Serial|String
+OutputSigType25=Digital
+OutputSigType26=Digital
+OutputSigType27=Digital
+OutputSigType28=Digital
+OutputSigType29=Digital
+OutputSigType30=Digital
+OutputSigType31=Digital
+OutputSigType32=Digital|Analog|Serial|String
+OutputSigType33=Digital|Analog|Serial|String
+OutputSigType34=Digital
+OutputSigType35=Digital
+OutputSigType36=Digital
+OutputSigType37=Digital
+OutputSigType38=Digital
+OutputSigType39=Digital
+OutputSigType40=Digital
+OutputSigType41=Digital|Analog|Serial|String
+OutputSigType42=Digital
+OutputSigType43=Digital
+OutputSigType44=Digital
+OutputSigType45=Digital
+OutputSigType46=Digital
+OutputSigType47=Digital
+OutputSigType48=Digital
+OutputSigType49=Digital
+OutputSigType50=Digital|Analog|Serial|String
+OutputSigType51=Digital|Analog|Serial|String
+OutputSigType52=Digital
+OutputSigType53=Digital
+OutputSigType54=Digital
+OutputSigType55=Digital
+OutputSigType56=Digital
+OutputSigType57=Digital
+OutputSigType58=Digital
+OutputSigType59=Digital|Analog|Serial|String
+OutputSigType60=Digital
+OutputSigType61=Digital
+OutputSigType62=Digital
+OutputSigType63=Digital
+OutputSigType64=Digital
+OutputSigType65=Digital
+OutputSigType66=Digital
+OutputSigType67=Digital|Analog|Serial|String
+OutputSigType68=Digital
+OutputSigType69=Digital
+OutputSigType70=Digital
+OutputSigType71=Digital
+OutputSigType72=Digital
+OutputSigType73=Digital
+OutputSigType74=Digital
+OutputSigType75=Digital|Analog|Serial|String
+OutputSigType76=Digital
+OutputSigType77=Digital
+OutputSigType78=Digital
+OutputSigType79=Digital
+OutputSigType80=Digital|Analog|Serial|String
+OutputSigType81=Digital
+OutputSigType82=Digital
+OutputSigType83=Digital
+OutputSigType84=Digital|Analog|Serial|String
+OutputSigType85=Digital|Analog|Serial|String
+OutputSigType86=Digital|Analog|Serial|String
+OutputSigType87=Digital|Analog|Serial|String
+OutputSigType88=Digital|Analog|Serial|String
+OutputSigType89=Digital|Analog|Serial|String
+OutputSigType90=Digital|Analog|Serial|String
+OutputSigType91=Digital|Analog|Serial|String
+OutputSigType92=Digital|Analog|Serial|String
+OutputSigType93=Digital|Analog|Serial|String
+OutputSigType94=Digital|Analog|Serial|String
+OutputSigType95=Digital|Analog|Serial|String
+OutputSigType96=Digital|Analog|Serial|String
+OutputSigType97=Digital|Analog|Serial|String
+OutputSigType98=Digital|Analog|Serial|String
+OutputSigType99=Digital|Analog|Serial|String
+OutputSigType100=Digital|Analog|Serial|String
+OutputSigType101=Digital|Analog|Serial|String
+OutputSigType102=Digital|Analog|Serial|String
+OutputSigType103=Digital|Analog|Serial|String
+OutputSigType104=Digital|Analog|Serial|String
+OutputSigType105=Digital|Analog|Serial|String
+OutputSigType106=Digital|Analog|Serial|String
+OutputSigType107=Digital|Analog|Serial|String
+OutputSigType108=Digital|Analog|Serial|String
+OutputSigType109=Digital|Analog|Serial|String
+OutputSigType110=Digital|Analog|Serial|String
+OutputSigType111=Digital|Analog|Serial|String
+OutputSigType112=Digital|Analog|Serial|String
+OutputSigType113=Digital|Analog|Serial|String
+OutputSigType114=Digital|Analog|Serial|String
+OutputSigType115=Digital|Analog|Serial|String
+OutputSigType116=Digital|Analog|Serial|String
+OutputSigType117=Digital|Analog|Serial|String
+OutputSigType118=Digital|Analog|Serial|String
+OutputSigType119=Digital|Analog|Serial|String
+OutputSigType120=Digital|Analog|Serial|String
+OutputSigType121=Digital|Analog|Serial|String
+OutputSigType122=Digital|Analog|Serial|String
+OutputSigType123=Digital
+OutputSigType124=Digital|Analog|Serial|String
+OutputSigType125=Digital
+OutputSigType126=Analog
+OutputSigType127=Digital|Analog|Serial|String
+OutputSigType128=Digital
+OutputSigType129=Digital|Analog|Serial|String
+OutputSigType130=Serial
+ParamSigType1=Constant
+ParamSigType2=Constant
+InputCue1=[~UNUSED~]
+InputCue2=[~UNUSED~]
+InputCue3=Reinitialize
+InputCue4=[~UNUSED~]
+InputCue5=Power_On
+InputCue6=Power_Off
+InputCue7=Power_Toggle
+InputCue8=[~UNUSED~]
+InputCue9=Volume_Up
+InputCue10=Volume_Down
+InputCue11=Volume_Set
+InputCue12=[~UNUSED~]
+InputCue13=Volume_Mute_On
+InputCue14=Volume_Mute_Off
+InputCue15=Volume_Mute_Toggle
+InputCue16=[~UNUSED~]
+InputCue17=Backlight_Up
+InputCue18=Backlight_Down
+InputCue19=Backlight_Set
+InputCue20=[~UNUSED~]
+InputCue21=Message_Box_On
+InputCue22=Message_Box_Off
+InputCue23=Message_Box_Toggle
+InputCue24=[~UNUSED~]
+InputCue25=Video_Input_VGA
+InputCue26=Video_Input_DisplayPort
+InputCue27=Video_Input_OPS
+InputCue28=Video_Input_HDMI_1
+InputCue29=Video_Input_HDMI_2
+InputCue30=Video_Input_HDMI_3
+InputCue31=Video_Input_HDMI_4
+InputCue32=Video_Input_Cycle
+InputCue33=[~UNUSED~]
+InputCue34=Audio_Input_Line_In
+InputCue35=Audio_Input_HDMI_1
+InputCue36=Audio_Input_HDMI_2
+InputCue37=Audio_Input_HDMI_3
+InputCue38=Audio_Input_HDMI_4
+InputCue39=Audio_Input_DisplayPort
+InputCue40=Audio_Input_OPS
+InputCue41=[~UNUSED~]
+InputCue42=MultiSource_View_Off
+InputCue43=MultiSource_View_PiP_Small
+InputCue44=MultiSource_View_PiP_Medium
+InputCue45=MultiSource_View_PiP_Large
+InputCue46=MultiSource_View_Dual
+InputCue47=MultiSource_View_Dual_Portrait
+InputCue48=MultiSource_View_Triple
+InputCue49=MultiSource_View_Quad
+InputCue50=MultiSource_View_Cycle
+InputCue51=[~UNUSED~]
+InputCue52=MultiSource_Select_2_VGA
+InputCue53=MultiSource_Select_2_DisplayPort
+InputCue54=MultiSource_Select_2_OPS
+InputCue55=MultiSource_Select_2_HDMI_1
+InputCue56=MultiSource_Select_2_HDMI_2
+InputCue57=MultiSource_Select_2_HDMI_3
+InputCue58=MultiSource_Select_2_HDMI_4
+InputCue59=[~UNUSED~]
+InputCue60=MultiSource_Select_3_VGA
+InputCue61=MultiSource_Select_3_DisplayPort
+InputCue62=MultiSource_Select_3_OPS
+InputCue63=MultiSource_Select_3_HDMI_1
+InputCue64=MultiSource_Select_3_HDMI_2
+InputCue65=MultiSource_Select_3_HDMI_3
+InputCue66=MultiSource_Select_3_HDMI_4
+InputCue67=[~UNUSED~]
+InputCue68=MultiSource_Select_4_VGA
+InputCue69=MultiSource_Select_4_DisplayPort
+InputCue70=MultiSource_Select_4_OPS
+InputCue71=MultiSource_Select_4_HDMI_1
+InputCue72=MultiSource_Select_4_HDMI_2
+InputCue73=MultiSource_Select_4_HDMI_3
+InputCue74=MultiSource_Select_4_HDMI_4
+InputCue75=[~UNUSED~]
+InputCue76=MultiSource_Preset_1
+InputCue77=MultiSource_Preset_2
+InputCue78=MultiSource_Preset_3
+InputCue79=MultiSource_Preset_4
+InputCue80=[~UNUSED~]
+InputCue81=Power_Save_Config_Wake_VGA
+InputCue82=Power_Save_Config_Wake_All
+InputCue83=Power_Save_Config_Always_On
+InputCue84=Power_Save_Config_Cycle
+InputCue85=[~UNUSED~]
+InputCue86=IR_Menu
+InputCue87=IR_Info
+InputCue88=IR_Up
+InputCue89=IR_Down
+InputCue90=IR_Left
+InputCue91=IR_Right
+InputCue92=IR_Enter
+InputCue93=IR_Exit
+InputCue94=IR_VGA
+InputCue95=IR_HDMI_1
+InputCue96=IR_HDMI_2
+InputCue97=IR_HDMI_3
+InputCue98=IR_HDMI_4
+InputCue99=IR_DisplayPort
+InputCue100=IR_OPS
+InputCue101=IR_Source
+InputCue102=IR_P-Source
+InputCue103=IR_PiP
+InputCue104=IR_P-Position
+InputCue105=IR_Swap
+InputCue106=IR_Aspect_Ratio
+InputCue107=IR_Freeze
+InputCue108=IR_Mute
+InputCue109=IR_Brightness
+InputCue110=IR_Contrast
+InputCue111=IR_Auto
+InputCue112=IR_Volume_Up
+InputCue113=IR_Volume_Down
+InputCue114=IR_Preset_1
+InputCue115=IR_Preset_2
+InputCue116=IR_Preset_3
+InputCue117=IR_Preset_4
+InputCue118=IR_Audio_Source_Main
+InputCue119=IR_Audio_Source_2
+InputCue120=IR_Audio_Source_3
+InputCue121=IR_Audio_Source_4
+InputCue122=[~UNUSED~]
+InputCue123=Poll_Enable
+InputCue124=[~UNUSED~]
+InputCue125=[~UNUSED~]
+InputCue126=[~UNUSED~]
+InputCue127=[~UNUSED~]
+InputCue128={{TCP/IP_Client_>>_Connect-F}}
+InputCue129={{TCP/IP_Client_>>_status}}
+InputCue130={{TCP/IP_Client_>>_RX$}}
+OutputCue1=Is_Communicating
+OutputCue2=[~UNUSED~]
+OutputCue3=Is_Initialized
+OutputCue4=[~UNUSED~]
+OutputCue5=Power_Is_On
+OutputCue6=[~UNUSED~]
+OutputCue7=[~UNUSED~]
+OutputCue8=[~UNUSED~]
+OutputCue9=[~UNUSED~]
+OutputCue10=[~UNUSED~]
+OutputCue11=Volume_Level
+OutputCue12=[~UNUSED~]
+OutputCue13=Volume_Is_Muted
+OutputCue14=[~UNUSED~]
+OutputCue15=[~UNUSED~]
+OutputCue16=[~UNUSED~]
+OutputCue17=[~UNUSED~]
+OutputCue18=[~UNUSED~]
+OutputCue19=Backlight_Level
+OutputCue20=[~UNUSED~]
+OutputCue21=Message_Box_Is_On
+OutputCue22=[~UNUSED~]
+OutputCue23=[~UNUSED~]
+OutputCue24=[~UNUSED~]
+OutputCue25=Video_Input_Is_VGA
+OutputCue26=Video_Input_Is_DisplayPort
+OutputCue27=Video_Input_Is_OPS
+OutputCue28=Video_Input_Is_HDMI_1
+OutputCue29=Video_Input_Is_HDMI_2
+OutputCue30=Video_Input_Is_HDMI_3
+OutputCue31=Video_Input_Is_HDMI_4
+OutputCue32=[~UNUSED~]
+OutputCue33=[~UNUSED~]
+OutputCue34=Audio_Input_Is_Line_In
+OutputCue35=Audio_Input_Is_HDMI_1
+OutputCue36=Audio_Input_Is_HDMI_2
+OutputCue37=Audio_Input_Is_HDMI_3
+OutputCue38=Audio_Input_Is_HDMI_4
+OutputCue39=Audio_Input_Is_DisplayPort
+OutputCue40=Audio_Input_Is_OPS
+OutputCue41=[~UNUSED~]
+OutputCue42=MultiSource_View_Is_Off
+OutputCue43=MultiSource_View_Is_PiP_Small
+OutputCue44=MultiSource_View_Is_PiP_Medium
+OutputCue45=MultiSource_View_Is_PiP_Large
+OutputCue46=MultiSource_View_Is_Dual
+OutputCue47=MultiSource_View_Is_Dual_Portrait
+OutputCue48=MultiSource_View_Is_Triple
+OutputCue49=MultiSource_View_Is_Quad
+OutputCue50=[~UNUSED~]
+OutputCue51=[~UNUSED~]
+OutputCue52=MultiSource_Select_2_Is_VGA
+OutputCue53=MultiSource_Select_2_Is_DisplayPort
+OutputCue54=MultiSource_Select_2_Is_OPS
+OutputCue55=MultiSource_Select_2_Is_HDMI_1
+OutputCue56=MultiSource_Select_2_Is_HDMI_2
+OutputCue57=MultiSource_Select_2_Is_HDMI_3
+OutputCue58=MultiSource_Select_2_Is_HDMI_4
+OutputCue59=[~UNUSED~]
+OutputCue60=MultiSource_Select_3_Is_VGA
+OutputCue61=MultiSource_Select_3_Is_DisplayPort
+OutputCue62=MultiSource_Select_3_Is_OPS
+OutputCue63=MultiSource_Select_3_Is_HDMI_1
+OutputCue64=MultiSource_Select_3_Is_HDMI_2
+OutputCue65=MultiSource_Select_3_Is_HDMI_3
+OutputCue66=MultiSource_Select_3_Is_HDMI_4
+OutputCue67=[~UNUSED~]
+OutputCue68=MultiSource_Select_4_Is_VGA
+OutputCue69=MultiSource_Select_4_Is_DisplayPort
+OutputCue70=MultiSource_Select_4_Is_OPS
+OutputCue71=MultiSource_Select_4_Is_HDMI_1
+OutputCue72=MultiSource_Select_4_Is_HDMI_2
+OutputCue73=MultiSource_Select_4_Is_HDMI_3
+OutputCue74=MultiSource_Select_4_Is_HDMI_4
+OutputCue75=[~UNUSED~]
+OutputCue76=MultiSource_Preset_Is_1
+OutputCue77=MultiSource_Preset_Is_2
+OutputCue78=MultiSource_Preset_Is_3
+OutputCue79=MultiSource_Preset_Is_4
+OutputCue80=[~UNUSED~]
+OutputCue81=Power_Save_Config_Is_Wake_VGA
+OutputCue82=Power_Save_Config_Is_Wake_All
+OutputCue83=Power_Save_Config_Is_Always_On
+OutputCue84=[~UNUSED~]
+OutputCue85=[~UNUSED~]
+OutputCue86=[~UNUSED~]
+OutputCue87=[~UNUSED~]
+OutputCue88=[~UNUSED~]
+OutputCue89=[~UNUSED~]
+OutputCue90=[~UNUSED~]
+OutputCue91=[~UNUSED~]
+OutputCue92=[~UNUSED~]
+OutputCue93=[~UNUSED~]
+OutputCue94=[~UNUSED~]
+OutputCue95=[~UNUSED~]
+OutputCue96=[~UNUSED~]
+OutputCue97=[~UNUSED~]
+OutputCue98=[~UNUSED~]
+OutputCue99=[~UNUSED~]
+OutputCue100=[~UNUSED~]
+OutputCue101=[~UNUSED~]
+OutputCue102=[~UNUSED~]
+OutputCue103=[~UNUSED~]
+OutputCue104=[~UNUSED~]
+OutputCue105=[~UNUSED~]
+OutputCue106=[~UNUSED~]
+OutputCue107=[~UNUSED~]
+OutputCue108=[~UNUSED~]
+OutputCue109=[~UNUSED~]
+OutputCue110=[~UNUSED~]
+OutputCue111=[~UNUSED~]
+OutputCue112=[~UNUSED~]
+OutputCue113=[~UNUSED~]
+OutputCue114=[~UNUSED~]
+OutputCue115=[~UNUSED~]
+OutputCue116=[~UNUSED~]
+OutputCue117=[~UNUSED~]
+OutputCue118=[~UNUSED~]
+OutputCue119=[~UNUSED~]
+OutputCue120=[~UNUSED~]
+OutputCue121=[~UNUSED~]
+OutputCue122=[~UNUSED~]
+OutputCue123=Polling_Is_Enabled
+OutputCue124=[~UNUSED~]
+OutputCue125=Connect-F
+OutputCue126=status
+OutputCue127=[~UNUSED~]
+OutputCue128={{Connect_>>_TCP/IP_Client}}
+OutputCue129=[~UNUSED~]
+OutputCue130={{TX$_>>_TCP/IP_Client}}
+ParamCue1=Volume_Step_Size
+ParamCue2=Backlight_Step_Size
+MPi=130
+Pi3=9
+Pi5=10
+Pi6=11
+Pi7=12
+Pi9=3
+Pi10=4
+Pi11=5
+Pi13=6
+Pi14=13
+Pi15=14
+Pi17=2
+Pi18=39
+Pi19=40
+Pi21=42
+Pi22=43
+Pi23=44
+Pi25=15
+Pi26=16
+Pi27=17
+Pi28=18
+Pi29=19
+Pi30=20
+Pi31=22
+Pi32=21
+Pi34=23
+Pi35=24
+Pi36=25
+Pi37=26
+Pi38=27
+Pi39=28
+Pi40=29
+Pi42=30
+Pi43=31
+Pi44=32
+Pi45=33
+Pi46=34
+Pi47=35
+Pi48=36
+Pi49=37
+Pi50=38
+Pi52=48
+Pi53=50
+Pi54=52
+Pi55=61
+Pi56=138
+Pi57=140
+Pi58=142
+Pi60=47
+Pi61=49
+Pi62=51
+Pi63=60
+Pi64=62
+Pi65=139
+Pi66=141
+Pi68=53
+Pi69=54
+Pi70=55
+Pi71=56
+Pi72=57
+Pi73=58
+Pi74=59
+Pi76=64
+Pi77=65
+Pi78=74
+Pi79=75
+Pi81=76
+Pi82=77
+Pi83=78
+Pi84=79
+Pi86=80
+Pi87=82
+Pi88=83
+Pi89=85
+Pi90=86
+Pi91=87
+Pi92=88
+Pi93=89
+Pi94=90
+Pi95=91
+Pi96=92
+Pi97=93
+Pi98=94
+Pi99=95
+Pi100=96
+Pi101=97
+Pi102=98
+Pi103=99
+Pi104=100
+Pi105=101
+Pi106=102
+Pi107=103
+Pi108=104
+Pi109=105
+Pi110=106
+Pi111=107
+Pi112=108
+Pi113=109
+Pi114=110
+Pi115=111
+Pi116=112
+Pi117=113
+Pi118=114
+Pi119=115
+Pi120=116
+Pi121=117
+Pi123=63
+Pi128=7
+Pi129=8
+Pi130=66
+MPo=130
+Po1=67
+Po3=68
+Po5=69
+Po11=118
+Po13=119
+Po19=41
+Po21=45
+Po25=70
+Po26=71
+Po27=72
+Po28=73
+Po29=120
+Po30=121
+Po31=122
+Po34=123
+Po35=124
+Po36=125
+Po37=126
+Po38=127
+Po39=128
+Po40=129
+Po42=130
+Po43=131
+Po44=132
+Po45=133
+Po46=134
+Po47=135
+Po48=136
+Po49=137
+Po52=143
+Po53=144
+Po54=145
+Po55=146
+Po56=147
+Po57=148
+Po58=149
+Po60=150
+Po61=151
+Po62=154
+Po63=155
+Po64=156
+Po65=157
+Po66=158
+Po68=152
+Po69=153
+Po70=166
+Po71=167
+Po72=168
+Po73=169
+Po74=170
+Po76=159
+Po77=160
+Po78=161
+Po79=162
+Po81=163
+Po82=164
+Po83=165
+Po123=81
+Po125=173
+Po126=172
+Po128=171
+Po130=84
+MPp=2
+Pp1=1
+Pp2=46
+CnxLogic1=S SER/Model:134
+CnxLogic2=S SER/Baud:19200
+CnxLogic3=S SER/Parity:N
+CnxLogic4=S SER/Databits:8
+CnxLogic5=S SER/Stopbits:1
+CnxLogic6=S SER/SWHandshaking:(None)
+CnxLogic7=S SER/HWHandshaking:(None)
+CnxLogic8=S SER/Protocol:(RS232)
+CnxLogic9=+
+CnxLogic10=C O 0128 I Q:Connect
+CnxLogic11=C I 0128 O Q:Connect-F
+CnxLogic12=C I 0129 O Q:status
+FileName=Planar EP-Series 4K IP v1.0.umc
+EncodingType=0
+ZeroOnIoOk=0
+]
+[
+ObjTp=Sm
+H=1
+SmC=157
+Nm=Central Control Modules
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=2
+SmC=157
+Nm=Network Modules
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=3
+SmC=157
+Nm=Ethernet
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=4
+SmC=156
+Nm=Logic
+ObjVer=1
+CF=2
+mC=8
+C1=7
+C2=9
+C3=8
+C4=10
+C5=18
+C6=19
+C7=21
+C8=31
+]
+[
+ObjTp=Sm
+H=5
+SmC=157
+Nm=DefineArguments
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mC=1
+C1=6
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=6
+SmC=55
+Nm=Argument Definition
+ObjVer=1
+PrH=5
+CF=2
+n1I=130
+n1O=130
+mI=130
+I1=7
+I2=7
+I3=92
+I4=7
+I5=12
+I6=13
+I7=14
+I8=7
+I9=24
+I10=34
+I11=4
+I12=7
+I13=35
+I14=36
+I15=37
+I16=7
+I17=32
+I18=38
+I19=39
+I20=7
+I21=26
+I22=27
+I23=28
+I24=7
+I25=16
+I26=18
+I27=19
+I28=20
+I29=21
+I30=22
+I31=23
+I32=17
+I33=7
+I34=33
+I35=84
+I36=85
+I37=86
+I38=87
+I39=83
+I40=88
+I41=7
+I42=91
+I43=93
+I44=94
+I45=95
+I46=96
+I47=97
+I48=98
+I49=103
+I50=90
+I51=7
+I52=112
+I53=113
+I54=114
+I55=158
+I56=116
+I57=117
+I58=118
+I59=7
+I60=132
+I61=133
+I62=165
+I63=179
+I64=115
+I65=180
+I66=181
+I67=7
+I68=120
+I69=121
+I70=122
+I71=123
+I72=124
+I73=125
+I74=126
+I75=7
+I76=127
+I77=128
+I78=129
+I79=130
+I80=7
+I81=176
+I82=177
+I83=178
+I84=41
+I85=7
+I86=139
+I87=43
+I88=45
+I89=46
+I90=47
+I91=48
+I92=49
+I93=50
+I94=51
+I95=52
+I96=53
+I97=54
+I98=55
+I99=56
+I100=57
+I101=58
+I102=59
+I103=60
+I104=61
+I105=62
+I106=63
+I107=64
+I108=65
+I109=66
+I110=67
+I111=68
+I112=69
+I113=140
+I114=141
+I115=71
+I116=72
+I117=73
+I118=134
+I119=135
+I120=136
+I121=137
+I122=7
+I123=10
+I124=7
+I125=7
+I126=7
+I127=7
+I128=110
+I129=119
+I130=182
+mO=130
+tO=130
+O1=15
+O2=7
+O3=5
+O4=7
+O5=6
+O6=7
+O7=7
+O8=7
+O9=7
+O10=7
+O11=76
+O12=7
+O13=40
+O14=7
+O15=7
+O16=7
+O17=7
+O18=7
+O19=42
+O20=7
+O21=31
+O22=7
+O23=7
+O24=7
+O25=74
+O26=75
+O27=77
+O28=70
+O29=78
+O30=79
+O31=29
+O32=7
+O33=7
+O34=138
+O35=143
+O36=144
+O37=145
+O38=146
+O39=30
+O40=142
+O41=7
+O42=147
+O43=148
+O44=149
+O45=150
+O46=151
+O47=152
+O48=153
+O49=154
+O50=7
+O51=7
+O52=25
+O53=156
+O54=157
+O55=108
+O56=159
+O57=160
+O58=161
+O59=7
+O60=183
+O61=184
+O62=164
+O63=185
+O64=166
+O65=167
+O66=168
+O67=7
+O68=162
+O69=163
+O70=80
+O71=89
+O72=101
+O73=102
+O74=131
+O75=7
+O76=170
+O77=171
+O78=172
+O79=173
+O80=7
+O81=175
+O82=169
+O83=174
+O84=7
+O85=7
+O86=7
+O87=7
+O88=7
+O89=7
+O90=7
+O91=7
+O92=7
+O93=7
+O94=7
+O95=7
+O96=7
+O97=7
+O98=7
+O99=7
+O100=7
+O101=7
+O102=7
+O103=7
+O104=7
+O105=7
+O106=7
+O107=7
+O108=7
+O109=7
+O110=7
+O111=7
+O112=7
+O113=7
+O114=7
+O115=7
+O116=7
+O117=7
+O118=7
+O119=7
+O120=7
+O121=7
+O122=7
+O123=11
+O124=7
+O125=109
+O126=111
+O127=7
+O128=105
+O129=7
+O130=107
+mP=2
+P1=Volume_Step_Size
+P2=Backlight_Step_Size
+MPi=130
+Pi3=9
+Pi5=10
+Pi6=11
+Pi7=12
+Pi9=3
+Pi10=4
+Pi11=5
+Pi13=6
+Pi14=13
+Pi15=14
+Pi17=2
+Pi18=39
+Pi19=40
+Pi21=42
+Pi22=43
+Pi23=44
+Pi25=15
+Pi26=16
+Pi27=17
+Pi28=18
+Pi29=19
+Pi30=20
+Pi31=22
+Pi32=21
+Pi34=23
+Pi35=24
+Pi36=25
+Pi37=26
+Pi38=27
+Pi39=28
+Pi40=29
+Pi42=30
+Pi43=31
+Pi44=32
+Pi45=33
+Pi46=34
+Pi47=35
+Pi48=36
+Pi49=37
+Pi50=38
+Pi52=48
+Pi53=50
+Pi54=52
+Pi55=61
+Pi56=138
+Pi57=140
+Pi58=142
+Pi60=47
+Pi61=49
+Pi62=51
+Pi63=60
+Pi64=62
+Pi65=139
+Pi66=141
+Pi68=53
+Pi69=54
+Pi70=55
+Pi71=56
+Pi72=57
+Pi73=58
+Pi74=59
+Pi76=64
+Pi77=65
+Pi78=74
+Pi79=75
+Pi81=76
+Pi82=77
+Pi83=78
+Pi84=79
+Pi86=80
+Pi87=82
+Pi88=83
+Pi89=85
+Pi90=86
+Pi91=87
+Pi92=88
+Pi93=89
+Pi94=90
+Pi95=91
+Pi96=92
+Pi97=93
+Pi98=94
+Pi99=95
+Pi100=96
+Pi101=97
+Pi102=98
+Pi103=99
+Pi104=100
+Pi105=101
+Pi106=102
+Pi107=103
+Pi108=104
+Pi109=105
+Pi110=106
+Pi111=107
+Pi112=108
+Pi113=109
+Pi114=110
+Pi115=111
+Pi116=112
+Pi117=113
+Pi118=114
+Pi119=115
+Pi120=116
+Pi121=117
+Pi123=63
+Pi128=7
+Pi129=8
+Pi130=66
+MPo=130
+Po1=67
+Po3=68
+Po5=69
+Po11=118
+Po13=119
+Po19=41
+Po21=45
+Po25=70
+Po26=71
+Po27=72
+Po28=73
+Po29=120
+Po30=121
+Po31=122
+Po34=123
+Po35=124
+Po36=125
+Po37=126
+Po38=127
+Po39=128
+Po40=129
+Po42=130
+Po43=131
+Po44=132
+Po45=133
+Po46=134
+Po47=135
+Po48=136
+Po49=137
+Po52=143
+Po53=144
+Po54=145
+Po55=146
+Po56=147
+Po57=148
+Po58=149
+Po60=150
+Po61=151
+Po62=154
+Po63=155
+Po64=156
+Po65=157
+Po66=158
+Po68=152
+Po69=153
+Po70=166
+Po71=167
+Po72=168
+Po73=169
+Po74=170
+Po76=159
+Po77=160
+Po78=161
+Po79=162
+Po81=163
+Po82=164
+Po83=165
+Po123=81
+Po125=173
+Po126=172
+Po128=171
+Po130=84
+MPp=2
+Pp1=1
+Pp2=46
+]
+[
+ObjTp=Sm
+H=7
+SmC=103
+Nm=Planar EP-Series 4K v1.0.usp
+ObjVer=1
+PrH=4
+CF=2
+n1I=123
+n2I=5
+n1O=123
+mI=128
+I2=186
+I3=187
+I4=92
+I6=12
+I7=13
+I8=14
+I10=99
+I11=100
+I12=35
+I13=36
+I14=37
+I16=44
+I17=104
+I19=26
+I20=27
+I21=28
+I23=10
+I25=17
+I26=90
+I27=41
+I29=16
+I30=18
+I31=19
+I32=20
+I33=21
+I34=22
+I35=23
+I37=33
+I38=84
+I39=85
+I40=86
+I41=87
+I42=83
+I43=88
+I45=91
+I46=93
+I47=94
+I48=95
+I49=96
+I50=97
+I51=98
+I52=103
+I54=112
+I55=113
+I56=114
+I57=158
+I58=116
+I59=117
+I60=118
+I62=132
+I63=133
+I64=165
+I65=179
+I66=115
+I67=180
+I68=181
+I70=120
+I71=121
+I72=122
+I73=123
+I74=124
+I75=125
+I76=126
+I78=127
+I79=128
+I80=129
+I81=130
+I83=176
+I84=177
+I85=178
+I87=139
+I88=43
+I89=45
+I90=46
+I91=47
+I92=48
+I93=49
+I94=50
+I95=51
+I96=52
+I97=53
+I98=54
+I99=55
+I100=56
+I101=57
+I102=58
+I103=59
+I104=60
+I105=61
+I106=62
+I107=63
+I108=64
+I109=65
+I110=66
+I111=67
+I112=68
+I113=69
+I114=140
+I115=141
+I116=71
+I117=72
+I118=73
+I119=134
+I120=135
+I121=136
+I122=137
+I124=4
+I126=39
+I128=8
+mO=128
+tO=128
+O2=15
+O4=5
+O6=6
+O12=40
+O19=31
+O23=11
+O29=74
+O30=75
+O31=77
+O32=70
+O33=78
+O34=79
+O35=29
+O37=138
+O38=143
+O39=144
+O40=145
+O41=146
+O42=30
+O43=142
+O45=147
+O46=148
+O47=149
+O48=150
+O49=151
+O50=152
+O51=153
+O52=154
+O54=25
+O55=156
+O56=157
+O57=108
+O58=159
+O59=160
+O60=161
+O62=183
+O63=184
+O64=164
+O65=185
+O66=166
+O67=167
+O68=168
+O70=162
+O71=163
+O72=80
+O73=89
+O74=101
+O75=102
+O76=131
+O78=170
+O79=171
+O80=172
+O81=173
+O83=175
+O84=169
+O85=174
+O124=76
+O126=42
+O128=9
+mP=3
+P1=
+P2=#Volume_Step_Size
+P3=#Backlight_Step_Size
+]
+[
+ObjTp=Sm
+H=8
+SmC=8
+Nm=Oscillator
+ObjVer=1
+PrH=4
+CF=2
+n1I=1
+n1O=1
+Cmn1=VOLUME UP RAMP\\
+mI=1
+I1=24
+mO=1
+tO=1
+O1=99
+mP=2
+P1=.1s
+P2=1s
+]
+[
+ObjTp=Sm
+H=9
+SmC=285
+Nm=Virtual Serial Driver for Macro Connection
+ObjVer=1
+PrH=4
+CF=2
+n1I=4
+n1O=2
+mI=4
+I1=9
+mO=2
+tO=2
+O1=8
+mP=8
+P1=
+P2=19200
+P3=N
+P4=8
+P5=1
+P6=(None)
+P7=(None)
+P8=(RS232)
+]
+[
+ObjTp=Sm
+H=10
+SmC=8
+Nm=Oscillator
+ObjVer=1
+PrH=4
+CF=2
+n1I=1
+n1O=1
+Cmn1=VOLUME DOWN RAMP\\
+mI=1
+I1=34
+mO=1
+tO=1
+O1=100
+mP=2
+P1=.1s
+P2=1s
+]
+[
+ObjTp=Sm
+H=18
+SmC=8
+Nm=Oscillator
+ObjVer=1
+PrH=4
+CF=2
+n1I=1
+n1O=1
+Cmn1=BACKLIGHT UP RAMP\\
+mI=1
+I1=32
+mO=1
+tO=1
+O1=44
+mP=2
+P1=.1s
+P2=1s
+]
+[
+ObjTp=Sm
+H=19
+SmC=8
+Nm=Oscillator
+ObjVer=1
+PrH=4
+CF=2
+n1I=1
+n1O=1
+Cmn1=BACKLIGHT DOWN RAMP\\
+mI=1
+I1=38
+mO=1
+tO=1
+O1=104
+mP=2
+P1=.1s
+P2=1s
+]
+[
+ObjTp=Sm
+H=21
+SmC=156
+Nm=SUBSYSTEM
+ObjVer=1
+PrH=4
+CF=2
+Cmn1=IP_Connection\\
+mC=9
+C1=22
+C2=23
+C3=24
+C4=25
+C5=26
+C6=27
+C7=28
+C8=29
+C9=30
+]
+[
+ObjTp=Sm
+H=22
+SmC=471
+Nm=Digital Force
+ObjVer=1
+PrH=21
+n1I=4
+OpF=0
+mI=4
+I1=81
+I2=109
+I3=110
+I4=105
+]
+[
+ObjTp=Sm
+H=23
+SmC=470
+Nm=Serial Force
+ObjVer=1
+PrH=21
+n1I=4
+OpF=0
+mI=4
+I1=106
+I2=155
+I3=182
+I4=107
+]
+[
+ObjTp=Sm
+H=24
+SmC=472
+Nm=Analog Force
+ObjVer=1
+PrH=21
+n1I=2
+OpF=0
+mI=2
+I1=111
+I2=119
+]
+[
+ObjTp=Sm
+H=25
+SmC=56
+Nm=Serial Buffer
+ObjVer=1
+PrH=21
+CF=2
+n1I=3
+n1O=2
+Cmn1=Serials for TCP/IP Client
+mI=3
+I1=2
+I2=9
+I3=182
+mO=2
+tO=2
+O1=107
+O2=8
+]
+[
+ObjTp=Sm
+H=26
+SmC=56
+Nm=Serial Buffer
+ObjVer=1
+PrH=21
+CF=2
+n1I=2
+n1O=1
+Cmn1=Analogs for TCP/IP Client
+mI=2
+I1=2
+I2=119
+mO=1
+tO=1
+O1=111
+]
+[
+ObjTp=Sm
+H=27
+SmC=20
+Nm=Buffer
+ObjVer=1
+PrH=21
+CF=2
+n1I=3
+n1O=2
+Cmn1=Digitals for TCP/IP Client
+mI=3
+I1=2
+I2=2
+I3=110
+mO=2
+tO=2
+O1=105
+O2=109
+]
+[
+ObjTp=Sm
+H=28
+SmC=38
+Nm=Analog Equate
+ObjVer=1
+PrH=21
+CF=2
+n1I=2
+n1O=1
+mI=2
+I1=111
+mO=1
+tO=1
+O1=186
+mP=1
+P1=2d
+]
+[
+ObjTp=Sm
+H=29
+SmC=205
+Nm=NOT
+ObjVer=1
+PrH=21
+CF=2
+n1I=1
+n1O=1
+mI=1
+I1=186
+mO=1
+tO=1
+O1=187
+]
+[
+ObjTp=Sm
+H=30
+SmC=286
+Nm=Virtual Device for Module Connection
+ObjVer=1
+PrH=21
+CF=2
+n1I=2
+n1O=3
+Cmn1=for TCP/IP Client
+mI=2
+I1=105
+I2=9
+mO=3
+tO=3
+O1=110
+O2=119
+O3=8
+mP=7
+P1=
+P2=Connect
+P3=TX$
+P4=Connect-F
+P5=status
+P6=RX$
+P7=
+]
+[
+ObjTp=Sm
+H=31
+SmC=156
+Nm=SUBSYSTEM
+ObjVer=1
+PrH=4
+CF=2
+Cmn1=Telnet IAC Handshaking
+mC=1
+C1=32
+]
+[
+ObjTp=Sm
+H=32
+SmC=101
+Nm=Serial I/O
+ObjVer=1
+PrH=31
+CF=2
+n1I=16
+n1O=15
+Cmn1=Telnet IAC Options\\
+mI=16
+I1=182
+I3=188
+I4=189
+I5=190
+I6=191
+I7=192
+I8=193
+I9=194
+I10=195
+I11=196
+I12=197
+I13=198
+I14=199
+I15=200
+I16=201
+mO=15
+tO=15
+O1=107
+O2=188
+O3=189
+O4=190
+O5=191
+O6=192
+O7=193
+O8=194
+O9=195
+O10=196
+O11=197
+O12=198
+O13=199
+O14=200
+O15=201
+mP=29
+P1=
+P2=\xFF\xFC\x18
+P3=\xFF\xFC\x20
+P4=\xFF\xFC#
+P5=\xFF\xFC'
+P6=\xFF\xFC$
+P7=\xFF\xFC\x01
+P8=\xFF\xFC"
+P9=\xFF\xFC\x1F
+P10=\xFF\xFC!
+P11=\xFF\xFC\x06
+P12=\xFF\xFC\x00
+P13=\xFF\xFD\x03
+P14=\xFF\xFE\x01
+P15=\xFF\xFE\x05
+P16=\xFF\xFD\x18
+P17=\xFF\xFD\x20
+P18=\xFF\xFD#
+P19=\xFF\xFD'
+P20=\xFF\xFD$
+P21=\xFF\xFD\x01
+P22=\xFF\xFD"
+P23=\xFF\xFD\x1F
+P24=\xFF\xFD!
+P25=\xFF\xFD\x06
+P26=\xFF\xFD\x00
+P27=\xFF\xFB\x03
+P28=\xFF\xFB\x01
+P29=\xFF\xFB\x05
+]
+[
+ObjTp=Sg
+H=4
+Nm=Volume_Set
+SgTp=2
+]
+[
+ObjTp=Sg
+H=5
+Nm=Is_Initialized
+]
+[
+ObjTp=Sg
+H=6
+Nm=Power_Is_On
+]
+[
+ObjTp=Sg
+H=7
+Nm=[~UNUSED~]
+SgTp=31
+]
+[
+ObjTp=Sg
+H=8
+Nm=From_Device
+SgTp=4
+]
+[
+ObjTp=Sg
+H=9
+Nm=To_Device
+SgTp=4
+]
+[
+ObjTp=Sg
+H=10
+Nm=Poll_Enable
+]
+[
+ObjTp=Sg
+H=11
+Nm=Polling_Is_Enabled
+]
+[
+ObjTp=Sg
+H=12
+Nm=Power_On
+]
+[
+ObjTp=Sg
+H=13
+Nm=Power_Off
+]
+[
+ObjTp=Sg
+H=14
+Nm=Power_Toggle
+]
+[
+ObjTp=Sg
+H=15
+Nm=Is_Communicating
+]
+[
+ObjTp=Sg
+H=16
+Nm=Video_Input_VGA
+]
+[
+ObjTp=Sg
+H=17
+Nm=Video_Input_Cycle
+]
+[
+ObjTp=Sg
+H=18
+Nm=Video_Input_DisplayPort
+]
+[
+ObjTp=Sg
+H=19
+Nm=Video_Input_OPS
+]
+[
+ObjTp=Sg
+H=20
+Nm=Video_Input_HDMI_1
+]
+[
+ObjTp=Sg
+H=21
+Nm=Video_Input_HDMI_2
+]
+[
+ObjTp=Sg
+H=22
+Nm=Video_Input_HDMI_3
+]
+[
+ObjTp=Sg
+H=23
+Nm=Video_Input_HDMI_4
+]
+[
+ObjTp=Sg
+H=24
+Nm=Volume_Up
+]
+[
+ObjTp=Sg
+H=25
+Nm=MultiSource_Select_2_Is_VGA
+]
+[
+ObjTp=Sg
+H=26
+Nm=Message_Box_On
+]
+[
+ObjTp=Sg
+H=27
+Nm=Message_Box_Off
+]
+[
+ObjTp=Sg
+H=28
+Nm=Message_Box_Toggle
+]
+[
+ObjTp=Sg
+H=29
+Nm=Video_Input_Is_HDMI_4
+]
+[
+ObjTp=Sg
+H=30
+Nm=Audio_Input_Is_DisplayPort
+]
+[
+ObjTp=Sg
+H=31
+Nm=Message_Box_Is_On
+]
+[
+ObjTp=Sg
+H=32
+Nm=Backlight_Up
+]
+[
+ObjTp=Sg
+H=33
+Nm=Audio_Input_Line_In
+]
+[
+ObjTp=Sg
+H=34
+Nm=Volume_Down
+]
+[
+ObjTp=Sg
+H=35
+Nm=Volume_Mute_On
+]
+[
+ObjTp=Sg
+H=36
+Nm=Volume_Mute_Off
+]
+[
+ObjTp=Sg
+H=37
+Nm=Volume_Mute_Toggle
+]
+[
+ObjTp=Sg
+H=38
+Nm=Backlight_Down
+]
+[
+ObjTp=Sg
+H=39
+Nm=Backlight_Set
+SgTp=2
+]
+[
+ObjTp=Sg
+H=40
+Nm=Volume_Is_Muted
+]
+[
+ObjTp=Sg
+H=41
+Nm=Power_Save_Config_Cycle
+]
+[
+ObjTp=Sg
+H=42
+Nm=Backlight_Level
+SgTp=2
+]
+[
+ObjTp=Sg
+H=43
+Nm=IR_Info
+]
+[
+ObjTp=Sg
+H=44
+Nm=Backlight_Up_OSC
+]
+[
+ObjTp=Sg
+H=45
+Nm=IR_Up
+]
+[
+ObjTp=Sg
+H=46
+Nm=IR_Down
+]
+[
+ObjTp=Sg
+H=47
+Nm=IR_Left
+]
+[
+ObjTp=Sg
+H=48
+Nm=IR_Right
+]
+[
+ObjTp=Sg
+H=49
+Nm=IR_Enter
+]
+[
+ObjTp=Sg
+H=50
+Nm=IR_Exit
+]
+[
+ObjTp=Sg
+H=51
+Nm=IR_VGA
+]
+[
+ObjTp=Sg
+H=52
+Nm=IR_HDMI_1
+]
+[
+ObjTp=Sg
+H=53
+Nm=IR_HDMI_2
+]
+[
+ObjTp=Sg
+H=54
+Nm=IR_HDMI_3
+]
+[
+ObjTp=Sg
+H=55
+Nm=IR_HDMI_4
+]
+[
+ObjTp=Sg
+H=56
+Nm=IR_DisplayPort
+]
+[
+ObjTp=Sg
+H=57
+Nm=IR_OPS
+]
+[
+ObjTp=Sg
+H=58
+Nm=IR_Source
+]
+[
+ObjTp=Sg
+H=59
+Nm=IR_P-Source
+]
+[
+ObjTp=Sg
+H=60
+Nm=IR_PiP
+]
+[
+ObjTp=Sg
+H=61
+Nm=IR_P-Position
+]
+[
+ObjTp=Sg
+H=62
+Nm=IR_Swap
+]
+[
+ObjTp=Sg
+H=63
+Nm=IR_Aspect_Ratio
+]
+[
+ObjTp=Sg
+H=64
+Nm=IR_Freeze
+]
+[
+ObjTp=Sg
+H=65
+Nm=IR_Mute
+]
+[
+ObjTp=Sg
+H=66
+Nm=IR_Brightness
+]
+[
+ObjTp=Sg
+H=67
+Nm=IR_Contrast
+]
+[
+ObjTp=Sg
+H=68
+Nm=IR_Auto
+]
+[
+ObjTp=Sg
+H=69
+Nm=IR_Volume_Up
+]
+[
+ObjTp=Sg
+H=70
+Nm=Video_Input_Is_HDMI_1
+]
+[
+ObjTp=Sg
+H=71
+Nm=IR_Preset_2
+]
+[
+ObjTp=Sg
+H=72
+Nm=IR_Preset_3
+]
+[
+ObjTp=Sg
+H=73
+Nm=IR_Preset_4
+]
+[
+ObjTp=Sg
+H=74
+Nm=Video_Input_Is_VGA
+]
+[
+ObjTp=Sg
+H=75
+Nm=Video_Input_Is_DisplayPort
+]
+[
+ObjTp=Sg
+H=76
+Nm=Volume_Level
+SgTp=2
+]
+[
+ObjTp=Sg
+H=77
+Nm=Video_Input_Is_OPS
+]
+[
+ObjTp=Sg
+H=78
+Nm=Video_Input_Is_HDMI_2
+]
+[
+ObjTp=Sg
+H=79
+Nm=Video_Input_Is_HDMI_3
+]
+[
+ObjTp=Sg
+H=80
+Nm=MultiSource_Select_4_Is_OPS
+]
+[
+ObjTp=Sg
+H=81
+Nm=Connect
+]
+[
+ObjTp=Sg
+H=83
+Nm=Audio_Input_DisplayPort
+]
+[
+ObjTp=Sg
+H=84
+Nm=Audio_Input_HDMI_1
+]
+[
+ObjTp=Sg
+H=85
+Nm=Audio_Input_HDMI_2
+]
+[
+ObjTp=Sg
+H=86
+Nm=Audio_Input_HDMI_3
+]
+[
+ObjTp=Sg
+H=87
+Nm=Audio_Input_HDMI_4
+]
+[
+ObjTp=Sg
+H=88
+Nm=Audio_Input_OPS
+]
+[
+ObjTp=Sg
+H=89
+Nm=MultiSource_Select_4_Is_HDMI_1
+]
+[
+ObjTp=Sg
+H=90
+Nm=MultiSource_View_Cycle
+]
+[
+ObjTp=Sg
+H=91
+Nm=MultiSource_View_Off
+]
+[
+ObjTp=Sg
+H=92
+Nm=Reinitialize
+]
+[
+ObjTp=Sg
+H=93
+Nm=MultiSource_View_PiP_Small
+]
+[
+ObjTp=Sg
+H=94
+Nm=MultiSource_View_PiP_Medium
+]
+[
+ObjTp=Sg
+H=95
+Nm=MultiSource_View_PiP_Large
+]
+[
+ObjTp=Sg
+H=96
+Nm=MultiSource_View_Dual
+]
+[
+ObjTp=Sg
+H=97
+Nm=MultiSource_View_Dual_Portrait
+]
+[
+ObjTp=Sg
+H=98
+Nm=MultiSource_View_Triple
+]
+[
+ObjTp=Sg
+H=99
+Nm=Volume_Up_OSC
+]
+[
+ObjTp=Sg
+H=100
+Nm=Volume_Down_OSC
+]
+[
+ObjTp=Sg
+H=101
+Nm=MultiSource_Select_4_Is_HDMI_2
+]
+[
+ObjTp=Sg
+H=102
+Nm=MultiSource_Select_4_Is_HDMI_3
+]
+[
+ObjTp=Sg
+H=103
+Nm=MultiSource_View_Quad
+]
+[
+ObjTp=Sg
+H=104
+Nm=Backlight_Down_OSC
+]
+[
+ObjTp=Sg
+H=105
+Nm={{Connect_>>_TCP/IP_Client}}
+]
+[
+ObjTp=Sg
+H=106
+Nm=TX$
+SgTp=4
+]
+[
+ObjTp=Sg
+H=107
+Nm={{TX$_>>_TCP/IP_Client}}
+SgTp=4
+]
+[
+ObjTp=Sg
+H=108
+Nm=MultiSource_Select_2_Is_HDMI_1
+]
+[
+ObjTp=Sg
+H=109
+Nm=Connect-F
+]
+[
+ObjTp=Sg
+H=110
+Nm={{TCP/IP_Client_>>_Connect-F}}
+]
+[
+ObjTp=Sg
+H=111
+Nm=status
+SgTp=2
+]
+[
+ObjTp=Sg
+H=112
+Nm=MultiSource_Select_2_VGA
+]
+[
+ObjTp=Sg
+H=113
+Nm=MultiSource_Select_2_DisplayPort
+]
+[
+ObjTp=Sg
+H=114
+Nm=MultiSource_Select_2_OPS
+]
+[
+ObjTp=Sg
+H=115
+Nm=MultiSource_Select_3_HDMI_2
+]
+[
+ObjTp=Sg
+H=116
+Nm=MultiSource_Select_2_HDMI_2
+]
+[
+ObjTp=Sg
+H=117
+Nm=MultiSource_Select_2_HDMI_3
+]
+[
+ObjTp=Sg
+H=118
+Nm=MultiSource_Select_2_HDMI_4
+]
+[
+ObjTp=Sg
+H=119
+Nm={{TCP/IP_Client_>>_status}}
+SgTp=2
+]
+[
+ObjTp=Sg
+H=120
+Nm=MultiSource_Select_4_VGA
+]
+[
+ObjTp=Sg
+H=121
+Nm=MultiSource_Select_4_DisplayPort
+]
+[
+ObjTp=Sg
+H=122
+Nm=MultiSource_Select_4_OPS
+]
+[
+ObjTp=Sg
+H=123
+Nm=MultiSource_Select_4_HDMI_1
+]
+[
+ObjTp=Sg
+H=124
+Nm=MultiSource_Select_4_HDMI_2
+]
+[
+ObjTp=Sg
+H=125
+Nm=MultiSource_Select_4_HDMI_3
+]
+[
+ObjTp=Sg
+H=126
+Nm=MultiSource_Select_4_HDMI_4
+]
+[
+ObjTp=Sg
+H=127
+Nm=MultiSource_Preset_1
+]
+[
+ObjTp=Sg
+H=128
+Nm=MultiSource_Preset_2
+]
+[
+ObjTp=Sg
+H=129
+Nm=MultiSource_Preset_3
+]
+[
+ObjTp=Sg
+H=130
+Nm=MultiSource_Preset_4
+]
+[
+ObjTp=Sg
+H=131
+Nm=MultiSource_Select_4_Is_HDMI_4
+]
+[
+ObjTp=Sg
+H=132
+Nm=MultiSource_Select_3_VGA
+]
+[
+ObjTp=Sg
+H=133
+Nm=MultiSource_Select_3_DisplayPort
+]
+[
+ObjTp=Sg
+H=134
+Nm=IR_Audio_Source_Main
+]
+[
+ObjTp=Sg
+H=135
+Nm=IR_Audio_Source_2
+]
+[
+ObjTp=Sg
+H=136
+Nm=IR_Audio_Source_3
+]
+[
+ObjTp=Sg
+H=137
+Nm=IR_Audio_Source_4
+]
+[
+ObjTp=Sg
+H=138
+Nm=Audio_Input_Is_Line_In
+]
+[
+ObjTp=Sg
+H=139
+Nm=IR_Menu
+]
+[
+ObjTp=Sg
+H=140
+Nm=IR_Volume_Down
+]
+[
+ObjTp=Sg
+H=141
+Nm=IR_Preset_1
+]
+[
+ObjTp=Sg
+H=142
+Nm=Audio_Input_Is_OPS
+]
+[
+ObjTp=Sg
+H=143
+Nm=Audio_Input_Is_HDMI_1
+]
+[
+ObjTp=Sg
+H=144
+Nm=Audio_Input_Is_HDMI_2
+]
+[
+ObjTp=Sg
+H=145
+Nm=Audio_Input_Is_HDMI_3
+]
+[
+ObjTp=Sg
+H=146
+Nm=Audio_Input_Is_HDMI_4
+]
+[
+ObjTp=Sg
+H=147
+Nm=MultiSource_View_Is_Off
+]
+[
+ObjTp=Sg
+H=148
+Nm=MultiSource_View_Is_PiP_Small
+]
+[
+ObjTp=Sg
+H=149
+Nm=MultiSource_View_Is_PiP_Medium
+]
+[
+ObjTp=Sg
+H=150
+Nm=MultiSource_View_Is_PiP_Large
+]
+[
+ObjTp=Sg
+H=151
+Nm=MultiSource_View_Is_Dual
+]
+[
+ObjTp=Sg
+H=152
+Nm=MultiSource_View_Is_Dual_Portrait
+]
+[
+ObjTp=Sg
+H=153
+Nm=MultiSource_View_Is_Triple
+]
+[
+ObjTp=Sg
+H=154
+Nm=MultiSource_View_Is_Quad
+]
+[
+ObjTp=Sg
+H=155
+Nm=RX$
+SgTp=4
+]
+[
+ObjTp=Sg
+H=156
+Nm=MultiSource_Select_2_Is_DisplayPort
+]
+[
+ObjTp=Sg
+H=157
+Nm=MultiSource_Select_2_Is_OPS
+]
+[
+ObjTp=Sg
+H=158
+Nm=MultiSource_Select_2_HDMI_1
+]
+[
+ObjTp=Sg
+H=159
+Nm=MultiSource_Select_2_Is_HDMI_2
+]
+[
+ObjTp=Sg
+H=160
+Nm=MultiSource_Select_2_Is_HDMI_3
+]
+[
+ObjTp=Sg
+H=161
+Nm=MultiSource_Select_2_Is_HDMI_4
+]
+[
+ObjTp=Sg
+H=162
+Nm=MultiSource_Select_4_Is_VGA
+]
+[
+ObjTp=Sg
+H=163
+Nm=MultiSource_Select_4_Is_DisplayPort
+]
+[
+ObjTp=Sg
+H=164
+Nm=MultiSource_Select_3_Is_OPS
+]
+[
+ObjTp=Sg
+H=165
+Nm=MultiSource_Select_3_OPS
+]
+[
+ObjTp=Sg
+H=166
+Nm=MultiSource_Select_3_Is_HDMI_2
+]
+[
+ObjTp=Sg
+H=167
+Nm=MultiSource_Select_3_Is_HDMI_3
+]
+[
+ObjTp=Sg
+H=168
+Nm=MultiSource_Select_3_Is_HDMI_4
+]
+[
+ObjTp=Sg
+H=169
+Nm=Power_Save_Config_Is_Wake_All
+]
+[
+ObjTp=Sg
+H=170
+Nm=MultiSource_Preset_Is_1
+]
+[
+ObjTp=Sg
+H=171
+Nm=MultiSource_Preset_Is_2
+]
+[
+ObjTp=Sg
+H=172
+Nm=MultiSource_Preset_Is_3
+]
+[
+ObjTp=Sg
+H=173
+Nm=MultiSource_Preset_Is_4
+]
+[
+ObjTp=Sg
+H=174
+Nm=Power_Save_Config_Is_Always_On
+]
+[
+ObjTp=Sg
+H=175
+Nm=Power_Save_Config_Is_Wake_VGA
+]
+[
+ObjTp=Sg
+H=176
+Nm=Power_Save_Config_Wake_VGA
+]
+[
+ObjTp=Sg
+H=177
+Nm=Power_Save_Config_Wake_All
+]
+[
+ObjTp=Sg
+H=178
+Nm=Power_Save_Config_Always_On
+]
+[
+ObjTp=Sg
+H=179
+Nm=MultiSource_Select_3_HDMI_1
+]
+[
+ObjTp=Sg
+H=180
+Nm=MultiSource_Select_3_HDMI_3
+]
+[
+ObjTp=Sg
+H=181
+Nm=MultiSource_Select_3_HDMI_4
+]
+[
+ObjTp=Sg
+H=182
+Nm={{TCP/IP_Client_>>_RX$}}
+SgTp=4
+]
+[
+ObjTp=Sg
+H=183
+Nm=MultiSource_Select_3_Is_VGA
+]
+[
+ObjTp=Sg
+H=184
+Nm=MultiSource_Select_3_Is_DisplayPort
+]
+[
+ObjTp=Sg
+H=185
+Nm=MultiSource_Select_3_Is_HDMI_1
+]
+[
+ObjTp=Sg
+H=186
+Nm=Start_Communication
+]
+[
+ObjTp=Sg
+H=187
+Nm=Stop_Communication
+]
+[
+ObjTp=Sg
+H=188
+Nm=TELNET_Wont_TerminalType
+]
+[
+ObjTp=Sg
+H=189
+Nm=TELNET_Wont_TerminalSpeed
+]
+[
+ObjTp=Sg
+H=190
+Nm=TELNET_Wont_XDisplay
+]
+[
+ObjTp=Sg
+H=191
+Nm=TELNET_Wont_NewEnvVar
+]
+[
+ObjTp=Sg
+H=192
+Nm=TELNET_Wont_EnvVar
+]
+[
+ObjTp=Sg
+H=193
+Nm=TELNET_Wont_Echo
+]
+[
+ObjTp=Sg
+H=194
+Nm=TELNET_Wont_LineMode
+]
+[
+ObjTp=Sg
+H=195
+Nm=TELNET_Wont_WindowSize
+]
+[
+ObjTp=Sg
+H=196
+Nm=TELNET_Wont_RemoteFlowControl
+]
+[
+ObjTp=Sg
+H=197
+Nm=TELNET_Wont_TimingMark
+]
+[
+ObjTp=Sg
+H=198
+Nm=TELNET_Wont_XmitBinary
+]
+[
+ObjTp=Sg
+H=199
+Nm=TELNET_Do_SupressGoAhead
+]
+[
+ObjTp=Sg
+H=200
+Nm=TELNET_Dont_Echo
+]
+[
+ObjTp=Sg
+H=201
+Nm=TELNET_Dont_Status
+]
+[
+ObjTp=Dp
+H=1
+Tp=1
+FD1=The amount to increment/decrement the volume with each pulse of||1
+FD2=Volume Up/Down.
+SD=Volume Step Size
+HD=TRUE
+DV=1d
+NF=1
+DNF=1
+EncFmt=0
+DVLF=1
+VVS=1
+LR=1d
+HR=100d
+Sgn=0
+]
+[
+ObjTp=Dp
+H=2
+Tp=2
+DT=1
+FD1=Pulse to raise backlight level by a single step. Hold to repeat||1
+FD2=until released.
+SD=Backlight Up
+Trg=2
+]
+[
+ObjTp=Dp
+H=3
+Tp=2
+DT=1
+FD1=Pulse to raise volume level by a single step. Hold to repeat until||1
+FD2=released.
+SD=Volume Up
+Trg=2
+]
+[
+ObjTp=Dp
+H=4
+Tp=2
+DT=1
+FD1=Pulse to lower volume level by a single step. Hold to repeat until||1
+FD2=released.
+SD=Volume Down
+Trg=2
+]
+[
+ObjTp=Dp
+H=5
+Tp=4
+FD1=Analog input to set volume to a specific level.
+SD=Volume Set
+HD=TRUE
+DV=0d
+NF=1
+DNF=1
+VVS=1
+LR=0d
+HR=100d
+]
+[
+ObjTp=Dp
+H=6
+Tp=2
+DT=1
+FD1=Pulse to turn volume mute on.
+SD=Volume Mute On
+Trg=2
+]
+[
+ObjTp=Dp
+H=7
+Tp=2
+DT=1
+FD1=High to indicate the TCP/IP client is connected.  This signal should||1
+FD2=be tied to the Connect-F feedback from the TCP/IP client outside||1
+FD3=the module.
+SD={{TCP/IP_Client_>>_Connect-F}}
+Trg=2
+]
+[
+ObjTp=Dp
+H=8
+Tp=4
+FD1=Decimal value indicating the current status of the TCP/IP client.
+FD2=||1This signal should be tied to the status feedback from the TCP/IP||1
+FD3=client outside the module.
+SD={{TCP/IP_Client_>>_status}}
+NF=1
+DNF=1
+]
+[
+ObjTp=Dp
+H=9
+Tp=2
+DT=1
+FD1=Pulse to re-establish communication with the device. This is the||1
+FD2=equivalent of pulsing Disconnect then Connect.
+SD=Reinitialize
+Trg=2
+]
+[
+ObjTp=Dp
+H=10
+Tp=2
+DT=1
+FD1=Pulse to turn power on.
+SD=Power On
+Trg=2
+]
+[
+ObjTp=Dp
+H=11
+Tp=2
+DT=1
+FD1=Pulse to turn power off.
+SD=Power Off
+Trg=2
+]
+[
+ObjTp=Dp
+H=12
+Tp=2
+DT=1
+FD1=Pulse to toggle power status.
+SD=Power Toggle
+Trg=2
+]
+[
+ObjTp=Dp
+H=13
+Tp=2
+DT=1
+FD1=Pulse to turn volume mute off.
+SD=Volume Mute Off
+Trg=2
+]
+[
+ObjTp=Dp
+H=14
+Tp=2
+DT=1
+FD1=Pulse to toggle volume mute.
+SD=Volume Mute Toggle
+Trg=2
+]
+[
+ObjTp=Dp
+H=15
+Tp=2
+DT=1
+FD1=Pulse to select VGA video input.
+SD=Video VGA
+Trg=2
+]
+[
+ObjTp=Dp
+H=16
+Tp=2
+DT=1
+FD1=Pulse to select DisplayPort video input.
+SD=Video DisplayPort
+Trg=2
+]
+[
+ObjTp=Dp
+H=17
+Tp=2
+DT=1
+FD1=Pulse to select OPS video input.
+SD=Video OPS
+Trg=2
+]
+[
+ObjTp=Dp
+H=18
+Tp=2
+DT=1
+FD1=Pulse to select HDMI 1 video input.
+SD=Video HDMI 1
+Trg=2
+]
+[
+ObjTp=Dp
+H=19
+Tp=2
+DT=1
+FD1=Pulse to select HDMI 2 video input.
+SD=Video HDMI 2
+Trg=2
+]
+[
+ObjTp=Dp
+H=20
+Tp=2
+DT=1
+FD1=Pulse to select HDMI 3 video input.
+SD=Video HDMI 3
+Trg=2
+]
+[
+ObjTp=Dp
+H=21
+Tp=2
+DT=1
+FD1=Pulse to cycle between video inputs.
+SD=Video Input Cycle
+Trg=2
+]
+[
+ObjTp=Dp
+H=22
+Tp=2
+DT=1
+FD1=Pulse to select HDMI 4 video input.
+SD=Video HDMI 4
+Trg=2
+]
+[
+ObjTp=Dp
+H=23
+Tp=2
+DT=1
+FD1=Pulse to select Line In audio input.
+SD=Audio Line In
+Trg=2
+]
+[
+ObjTp=Dp
+H=24
+Tp=2
+DT=1
+FD1=Pulse to select HDMI 1 audio input.
+SD=Audio HDMI 1
+Trg=2
+]
+[
+ObjTp=Dp
+H=25
+Tp=2
+DT=1
+FD1=Pulse to select HDMI 2 audio input.
+SD=Audio HDMI 2
+Trg=2
+]
+[
+ObjTp=Dp
+H=26
+Tp=2
+DT=1
+FD1=Pulse to select HDMI 3 audio input.
+SD=Audio HDMI 3
+Trg=2
+]
+[
+ObjTp=Dp
+H=27
+Tp=2
+DT=1
+FD1=Pulse to select HDMI 4 audio input.
+SD=Audio HDMI 4
+Trg=2
+]
+[
+ObjTp=Dp
+H=28
+Tp=2
+DT=1
+FD1=Pulse to select DisplayPort audio input.
+SD=Audio DisplayPort
+Trg=2
+]
+[
+ObjTp=Dp
+H=29
+Tp=2
+DT=1
+FD1=Pulse to select OPS audio input.
+SD=Audio OPS
+Trg=2
+]
+[
+ObjTp=Dp
+H=30
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source View to Off.
+SD=MultiSource View Off
+Trg=2
+]
+[
+ObjTp=Dp
+H=31
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source View to PiP Small.
+SD=MultiSource View PiP Small
+Trg=2
+]
+[
+ObjTp=Dp
+H=32
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source View to PiP Medium.
+SD=MultiSource View PiP Medium
+Trg=2
+]
+[
+ObjTp=Dp
+H=33
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source View to PiP Large.
+SD=MultiSource View PiP Large
+Trg=2
+]
+[
+ObjTp=Dp
+H=34
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source View to Dual.
+SD=MultiSource View Dual
+Trg=2
+]
+[
+ObjTp=Dp
+H=35
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source View to Dual Portrait.
+SD=MultiSource View Dual Portrait
+Trg=2
+]
+[
+ObjTp=Dp
+H=36
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source View to Triple.
+SD=MultiSource View Triple
+Trg=2
+]
+[
+ObjTp=Dp
+H=37
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source View to Quad.
+SD=MultiSource View Quad
+Trg=2
+]
+[
+ObjTp=Dp
+H=38
+Tp=2
+DT=1
+FD1=Pulse to cycle between Multi-Source Views.
+SD=MultiSource View Cycle
+Trg=2
+]
+[
+ObjTp=Dp
+H=39
+Tp=2
+DT=1
+FD1=Pulse to lower backlight level by a single step. Hold to repeat||1
+FD2=until released.
+SD=Backlight Down
+Trg=2
+]
+[
+ObjTp=Dp
+H=40
+Tp=4
+FD1=Analog input to set backlight to a specific level.
+SD=Backlight Set
+HD=TRUE
+DV=0d
+NF=1
+DNF=1
+VVS=1
+LR=0d
+HR=100d
+]
+[
+ObjTp=Dp
+H=41
+Tp=5
+FD1=Analog signal indicating the current backlight level for the device.
+SD=Backlight Level
+DNF=1
+VVS=1
+LR=0d
+HR=100d
+]
+[
+ObjTp=Dp
+H=42
+Tp=2
+DT=1
+FD1=Pulse to turn message box on.
+SD=Message Box On
+Trg=2
+]
+[
+ObjTp=Dp
+H=43
+Tp=2
+DT=1
+FD1=Pulse to turn message box off.
+SD=Message Box Off
+Trg=2
+]
+[
+ObjTp=Dp
+H=44
+Tp=2
+DT=1
+FD1=Pulse to toggle message box.
+SD=Message Box Toggle
+Trg=2
+]
+[
+ObjTp=Dp
+H=45
+Tp=3
+DT=1
+FD1=High to indicate that message box is currently on.\\Low to indicate||1
+FD2=that message box is currently off.
+SD=Message Box Is On
+RE=Message Box On
+HS=Message Box Is On
+]
+[
+ObjTp=Dp
+H=46
+Tp=1
+FD1=The amount to increment/decrement the backlight with each pulse||1
+FD2=of Backlight Up/Down.
+SD=Backlight Step Size
+HD=TRUE
+DV=1d
+NF=1
+DNF=1
+EncFmt=0
+DVLF=1
+VVS=1
+LR=1d
+HR=100d
+Sgn=0
+]
+[
+ObjTp=Dp
+H=47
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #3 to VGA.
+SD=Multi-Source Select 3 VGA
+Trg=2
+]
+[
+ObjTp=Dp
+H=48
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #2 to VGA.
+SD=Multi-Source Select 2 VGA
+Trg=2
+]
+[
+ObjTp=Dp
+H=49
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #3 to DisplayPort.
+SD=Multi-Source Select 3 DisplayPort
+Trg=2
+]
+[
+ObjTp=Dp
+H=50
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #2 to DisplayPort.
+SD=Multi-Source Select 2 DisplayPort
+Trg=2
+]
+[
+ObjTp=Dp
+H=51
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #3 to OPS.
+SD=Multi-Source Select 3 OPS
+Trg=2
+]
+[
+ObjTp=Dp
+H=52
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #2 to OPS.
+SD=Multi-Source Select 2 OPS
+Trg=2
+]
+[
+ObjTp=Dp
+H=53
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #4 to VGA.
+SD=Multi-Source Select 4 VGA
+Trg=2
+]
+[
+ObjTp=Dp
+H=54
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #4 to DisplayPort.
+SD=Multi-Source Select 4 DisplayPort
+Trg=2
+]
+[
+ObjTp=Dp
+H=55
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #4 to OPS.
+SD=Multi-Source Select 4 OPS
+Trg=2
+]
+[
+ObjTp=Dp
+H=56
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #4 to HDMI 1.
+SD=Multi-Source Select 4 HDMI 1
+Trg=2
+]
+[
+ObjTp=Dp
+H=57
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #4 to HDMI 2.
+SD=Multi-Source Select 4 HDMI 2
+Trg=2
+]
+[
+ObjTp=Dp
+H=58
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #4 to HDMI 3.
+SD=Multi-Source Select 4 HDMI 3
+Trg=2
+]
+[
+ObjTp=Dp
+H=59
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #4 to HDMI 4.
+SD=Multi-Source Select 4 HDMI 4
+Trg=2
+]
+[
+ObjTp=Dp
+H=60
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #3 to HDMI 1.
+SD=Multi-Source Select 3 HDMI 1
+Trg=2
+]
+[
+ObjTp=Dp
+H=61
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #2 to HDMI 1.
+SD=Multi-Source Select 2 HDMI 1
+Trg=2
+]
+[
+ObjTp=Dp
+H=62
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #3 to HDMI 2.
+SD=Multi-Source Select 3 HDMI 2
+Trg=2
+]
+[
+ObjTp=Dp
+H=63
+Tp=2
+DT=1
+FD1=Latch to enable polling. Unlatch to disable polling.
+SD=Poll Enable
+Trg=4
+]
+[
+ObjTp=Dp
+H=64
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source Preset to 1.
+SD=Mutli-Source Preset 1
+Trg=2
+]
+[
+ObjTp=Dp
+H=65
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source Preset to 2.
+SD=Multi-Source Preset 2
+Trg=2
+]
+[
+ObjTp=Dp
+H=66
+Tp=6
+DT=4
+FD1=Serial data received from the TCP/IP client. This signal should||1
+FD2=be tied to the RX$ feedback from the TCP/IP client outside the module.
+SD={{TCP/IP_Client_>>_RX$}}
+]
+[
+ObjTp=Dp
+H=67
+Tp=3
+DT=1
+FD1=High to indicate that the module is successfully communicating with||1
+FD2=the device.
+SD=Is Communicating
+RE=Is Communicating
+HS=Device is Communicating
+]
+[
+ObjTp=Dp
+H=68
+Tp=3
+DT=1
+FD1=High to indicate that the module is successfully communicating with||1
+FD2=the device and internal state variables are now synced with the||1
+FD3=device's current state.
+SD=Is Initialized
+Nt1=Outgoing commands will not be sent until the module is initialized.
+Nt2=||1However, heartbeat commands will continue to be sent.
+RE=Is Initialized
+HS=Module is Initialized
+]
+[
+ObjTp=Dp
+H=69
+Tp=3
+DT=1
+FD1=High to indicate that the device is currently powered on. Low to||1
+FD2=indicate that the device is currently powered off.
+SD=Power is On
+RE=Power On
+HS=Power is On
+]
+[
+ObjTp=Dp
+H=70
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected video input on the||1
+FD2=device is VGA.
+SD=Video Input is VGA
+RE=Video Input VGA
+HS=Video Input is VGA
+]
+[
+ObjTp=Dp
+H=71
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected video input on the||1
+FD2=device is DisplayPort.
+SD=Video Input is DisplayPort
+RE=Video Input DisplayPort
+HS=Video Input is DisplayPort
+]
+[
+ObjTp=Dp
+H=72
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected video input on the||1
+FD2=device is OPS.
+SD=Video Input is OPS
+RE=Video Input OPS
+HS=Video Input is OPS
+]
+[
+ObjTp=Dp
+H=73
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected video input on the||1
+FD2=device is HDMI 1.
+SD=Video Input is HDMI 1
+RE=Video Input HDMI 1
+HS=Video Input is HDMI 1
+]
+[
+ObjTp=Dp
+H=74
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source Preset to 3.
+SD=Multi-Source Preset 3
+Trg=2
+]
+[
+ObjTp=Dp
+H=75
+Tp=2
+DT=1
+FD1=Pulse to set Multi-Source Preset to 4.
+SD=Multi-Source Preset 4
+Trg=2
+]
+[
+ObjTp=Dp
+H=76
+Tp=2
+DT=1
+FD1=Pulse to set Power Save Config to Wake VGA.
+SD=Power Save Config Wake VGA
+Trg=2
+]
+[
+ObjTp=Dp
+H=77
+Tp=2
+DT=1
+FD1=Pulse to set Power Save Config to Wake All.
+SD=Power Save Config Wake All
+Trg=2
+]
+[
+ObjTp=Dp
+H=78
+Tp=2
+DT=1
+FD1=Pulse to set Power Save Config to Always On.
+SD=Power Save Config Always On
+Trg=2
+]
+[
+ObjTp=Dp
+H=79
+Tp=2
+DT=1
+FD1=Pulse to cycle between Power Save Configs.
+SD=Power Save Config Cycle
+Trg=2
+]
+[
+ObjTp=Dp
+H=80
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Menu.
+SD=IR Menu
+Trg=2
+]
+[
+ObjTp=Dp
+H=81
+Tp=3
+DT=1
+FD1=High to indicate that device polling is currently enabled. Low to||1
+FD2=indicate that device polling is currently disabled.
+SD=Polling is Enabled
+RE=Polling Enabled
+HS=Polling is Enabled
+]
+[
+ObjTp=Dp
+H=82
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Info.
+SD=IR Info
+Trg=2
+]
+[
+ObjTp=Dp
+H=83
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Up.
+SD=IR Up
+Trg=2
+]
+[
+ObjTp=Dp
+H=84
+Tp=7
+DT=4
+FD1=Serial data sent to the TCP/IP client. This signal should be tied||1
+FD2=to the TX$ input on the TCP/IP client outside the module.
+SD={{TX$_>>_TCP/IP_Client}}
+]
+[
+ObjTp=Dp
+H=85
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Down.
+SD=IR Down
+Trg=2
+]
+[
+ObjTp=Dp
+H=86
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Left.
+SD=IR Left
+Trg=2
+]
+[
+ObjTp=Dp
+H=87
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Right.
+SD=IR Right
+Trg=2
+]
+[
+ObjTp=Dp
+H=88
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for IR Enter.
+SD=IR Enter
+Trg=2
+]
+[
+ObjTp=Dp
+H=89
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Exit.
+SD=IR Exit
+Trg=2
+]
+[
+ObjTp=Dp
+H=90
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for VGA.
+SD=IR VGA
+Trg=2
+]
+[
+ObjTp=Dp
+H=91
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for HDMI 1.
+SD=IR HDMI 1
+Trg=2
+]
+[
+ObjTp=Dp
+H=92
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for HDMI 2.
+SD=IR HDMI 2
+Trg=2
+]
+[
+ObjTp=Dp
+H=93
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for HDMI 3.
+SD=IR HDMI 3
+Trg=2
+]
+[
+ObjTp=Dp
+H=94
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for HDMI 4.
+SD=IR HDMI 4
+Trg=2
+]
+[
+ObjTp=Dp
+H=95
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for DisplayPort.
+SD=IR DisplayPort
+Trg=2
+]
+[
+ObjTp=Dp
+H=96
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for OPS.
+SD=IR OPS
+Trg=2
+]
+[
+ObjTp=Dp
+H=97
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Source.
+SD=IR Source
+Trg=2
+]
+[
+ObjTp=Dp
+H=98
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for P-Source.
+SD=IR P-Source
+Trg=2
+]
+[
+ObjTp=Dp
+H=99
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for PiP.
+SD=IR PiP
+Trg=2
+]
+[
+ObjTp=Dp
+H=100
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for P-Position.
+SD=IR P-Position
+Trg=2
+]
+[
+ObjTp=Dp
+H=101
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Swap.
+SD=IR Swap
+Trg=2
+]
+[
+ObjTp=Dp
+H=102
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Aspect Ratio.
+SD=IR Aspect Ratio
+Trg=2
+]
+[
+ObjTp=Dp
+H=103
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Freeze.
+SD=IR Freeze
+Trg=2
+]
+[
+ObjTp=Dp
+H=104
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Mute.
+SD=IR Mute
+Trg=2
+]
+[
+ObjTp=Dp
+H=105
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Brightness.
+SD=IR Brightness
+Trg=2
+]
+[
+ObjTp=Dp
+H=106
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Contrast.
+SD=IR Contrast
+Trg=2
+]
+[
+ObjTp=Dp
+H=107
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Auto.
+SD=IR Auto
+Trg=2
+]
+[
+ObjTp=Dp
+H=108
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Volume Up.
+SD=IR Volume Up
+Trg=2
+]
+[
+ObjTp=Dp
+H=109
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Volume Down.
+SD=IR Volume Down
+Trg=2
+]
+[
+ObjTp=Dp
+H=110
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Preset 1.
+SD=IR Preset 1
+Trg=2
+]
+[
+ObjTp=Dp
+H=111
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Preset 2.
+SD=IR Preset 2
+Trg=2
+]
+[
+ObjTp=Dp
+H=112
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Preset 3.
+SD=IR Preset 3
+Trg=2
+]
+[
+ObjTp=Dp
+H=113
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Preset 4.
+SD=IR Preset 4
+Trg=2
+]
+[
+ObjTp=Dp
+H=114
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Audio Source Main.
+SD=IR Audio Source Main
+Trg=2
+]
+[
+ObjTp=Dp
+H=115
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Audio Source 2.
+SD=IR Audio Source 2
+Trg=2
+]
+[
+ObjTp=Dp
+H=116
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Audio Source 3.
+SD=IR Audio Source 3
+Trg=2
+]
+[
+ObjTp=Dp
+H=117
+Tp=2
+DT=1
+FD1=Pulse to emulate the IR function for Audio Source 4.
+SD=IR Audio Source 4
+Trg=2
+]
+[
+ObjTp=Dp
+H=118
+Tp=5
+FD1=Analog signal indicating the current volume level for the device.
+SD=Volume Level
+DNF=1
+VVS=1
+LR=0d
+HR=100d
+]
+[
+ObjTp=Dp
+H=119
+Tp=3
+DT=1
+FD1=High to indicate that the device volume is currently muted. Low||1
+FD2=to indicate that the device volume is currently unmuted.
+SD=Volume Is Muted
+RE=Volume Muted
+HS=Volume Is Muted
+]
+[
+ObjTp=Dp
+H=120
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected video input on the||1
+FD2=device is HDMI 2.
+SD=Video Input is HDMI 2
+RE=Video Input HDMI 2
+HS=Video Input is HDMI 2
+]
+[
+ObjTp=Dp
+H=121
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected video input on the||1
+FD2=device is HDMI 3.
+SD=Video Input is HDMI 3
+RE=Video Input HDMI 3
+HS=Video Input is HDMI 3
+]
+[
+ObjTp=Dp
+H=122
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected video input on the||1
+FD2=device is HDMI 4.
+SD=Video Input is HDMI 4
+RE=Video Input HDMI 4
+HS=Video Input is HDMI 4
+]
+[
+ObjTp=Dp
+H=123
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected audio input on the||1
+FD2=device is Line In.
+SD=Audio Input is Line In
+RE=Audio Input Line In
+HS=Audio Input is Line In
+]
+[
+ObjTp=Dp
+H=124
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected audio input on the||1
+FD2=device is HDMI 1.
+SD=Audio Input is HDMI 1
+RE=Audio Input HDMI 1
+HS=Audio Input is HDMI 1
+]
+[
+ObjTp=Dp
+H=125
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected audio input on the||1
+FD2=device is HDMI 2.
+SD=Audio Input is HDMI 2
+RE=Audio Input HDMI 2
+HS=Audio Input is HDMI 2
+]
+[
+ObjTp=Dp
+H=126
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected audio input on the||1
+FD2=device is HDMI 3.
+SD=Audio Input is HDMI 3
+RE=Audio Input HDMI 3
+HS=Audio Input is HDMI 3
+]
+[
+ObjTp=Dp
+H=127
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected audio input on the||1
+FD2=device is HDMI 4.
+SD=Audio Input is HDMI 4
+RE=Audio Input HDMI 4
+HS=Audio Input is HDMI 4
+]
+[
+ObjTp=Dp
+H=128
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected audio input on the||1
+FD2=device is DisplayPort.
+SD=Audio Input is DisplayPort
+RE=Audio Input DisplayPort
+HS=Audio Input is DisplayPort
+]
+[
+ObjTp=Dp
+H=129
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected audio input on the||1
+FD2=device is OPS.
+SD=Audio Input is OPS
+RE=Audio Input OPS
+HS=Audio Input is OPS
+]
+[
+ObjTp=Dp
+H=130
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Multi-Source View on||1
+FD2=the device is Off.
+SD=Multi-Source View is Off
+RE=Multi-Source View Off
+HS=Multi-Source View is Off
+]
+[
+ObjTp=Dp
+H=131
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Multi-Source View on||1
+FD2=the device is PiP Small.
+SD=Multi-Source View is PiP Small
+RE=Multi-Source View PiP Small
+HS=Multi-Source View is PiP Small
+]
+[
+ObjTp=Dp
+H=132
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Multi-Source View on||1
+FD2=the device is PiP Medium.
+SD=Multi-Source View is PiP Medium
+RE=Multi-Source View PiP Medium
+HS=Multi-Source View is PiP Medium
+]
+[
+ObjTp=Dp
+H=133
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Multi-Source View on||1
+FD2=the device is PiP Large.
+SD=Multi-Source View is PiP Large
+RE=Multi-Source View PiP Large
+HS=Multi-Source View is PiP Large
+]
+[
+ObjTp=Dp
+H=134
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Multi-Source View on||1
+FD2=the device is Dual.
+SD=Multi-Source View is Dual
+RE=Multi-Source View Dual
+HS=Multi-Source View is Dual
+]
+[
+ObjTp=Dp
+H=135
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Multi-Source View on||1
+FD2=the device is Dual Portrait.
+SD=Multi-Source View is Dual Portrait
+RE=Multi-Source View Dual Portrait
+HS=Multi-Source View is Dual Portrait
+]
+[
+ObjTp=Dp
+H=136
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Multi-Source View on||1
+FD2=the device is Triple.
+SD=Multi-Source View is Triple
+RE=Multi-Source View Triple
+HS=Multi-Source View is Triple
+]
+[
+ObjTp=Dp
+H=137
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Multi-Source View on||1
+FD2=the device is Quad.
+SD=Multi-Source View is Quad
+RE=Multi-Source View Quad
+HS=Multi-Source View is Quad
+]
+[
+ObjTp=Dp
+H=138
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #2 to HDMI 2.
+SD=Multi-Source Select 2 HDMI 2
+Trg=2
+]
+[
+ObjTp=Dp
+H=139
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #3 to HDMI 3.
+SD=Multi-Source Select 3 HDMI 3
+Trg=2
+]
+[
+ObjTp=Dp
+H=140
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #2 to HDMI 3.
+SD=Multi-Source Select 2 HDMI 3
+Trg=2
+]
+[
+ObjTp=Dp
+H=141
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #3 to HDMI 4.
+SD=Multi-Source Select 3 HDMI 4
+Trg=2
+]
+[
+ObjTp=Dp
+H=142
+Tp=2
+DT=1
+FD1=Pulse to set source for Multi-Source Window #2 to HDMI 4.
+SD=Multi-Source Select 2 HDMI 4
+Trg=2
+]
+[
+ObjTp=Dp
+H=143
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #2 on the device is VGA.
+SD=Multi-Source Select 2 Is VGA
+RE=Multi-Source Select 2 Is VGA
+HS=Multi-Source Select 2 Is VGA
+]
+[
+ObjTp=Dp
+H=144
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #2 on the device is DisplayPort.
+SD=Multi-Source Select 2 Is DisplayPort
+RE=Multi-Source Select 2 Is DisplayPort
+HS=Multi-Source Select 2 Is DisplayPort
+]
+[
+ObjTp=Dp
+H=145
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #2 on the device is OPS.
+SD=Multi-Source Select 2 Is OPS
+RE=Multi-Source Select 2 Is OPS
+HS=Multi-Source Select 2 Is OPS
+]
+[
+ObjTp=Dp
+H=146
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #2 on the device is HDMI 1.
+SD=Multi-Source Select 2 Is HDMI 1
+RE=Multi-Source Select 2 Is HDMI 1
+HS=Multi-Source Select 2 Is HDMI 1
+]
+[
+ObjTp=Dp
+H=147
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #2 on the device is HDMI 2.
+SD=Multi-Source Select 2 Is HDMI 2
+RE=Multi-Source Select 2 Is HDMI 2
+HS=Multi-Source Select 2 Is HDMI 2
+]
+[
+ObjTp=Dp
+H=148
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #2 on the device is HDMI 3.
+SD=Multi-Source Select 2 Is HDMI 3
+RE=Multi-Source Select 2 Is HDMI 3
+HS=Multi-Source Select 2 Is HDMI 3
+]
+[
+ObjTp=Dp
+H=149
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #2 on the device is HDMI 4.
+SD=Multi-Source Select 2 Is HDMI 4
+RE=Multi-Source Select 2 Is HDMI 4
+HS=Multi-Source Select 2 Is HDMI 4
+]
+[
+ObjTp=Dp
+H=150
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #3 on the device is VGA.
+SD=Multi-Source Select 3 Is VGA
+RE=Multi-Source Select 3 Is VGA
+HS=Multi-Source Select 3 Is VGA
+]
+[
+ObjTp=Dp
+H=151
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #3 on the device is DisplayPort.
+SD=Multi-Source Select 3 Is DisplayPort
+RE=Multi-Source Select 3 Is DisplayPort
+HS=Multi-Source Select 3 Is DisplayPort
+]
+[
+ObjTp=Dp
+H=152
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #4 on the device is VGA.
+SD=Multi-Source Select 4 Is VGA
+RE=Multi-Source Select 4 Is VGA
+HS=Multi-Source Select 4 Is VGA
+]
+[
+ObjTp=Dp
+H=153
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #4 on the device is DisplayPort.
+SD=Multi-Source Select 4 Is DisplayPort
+RE=Multi-Source Select 4 Is DisplayPort
+HS=Multi-Source Select 4 Is DisplayPort
+]
+[
+ObjTp=Dp
+H=154
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #3 on the device is OPS.
+SD=Multi-Source Select 3 Is OPS
+RE=Multi-Source Select 3 Is OPS
+HS=Multi-Source Select 3 Is OPS
+]
+[
+ObjTp=Dp
+H=155
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #3 on the device is HDMI 1.
+SD=Multi-Source Select 3 Is HDMI 1
+RE=Multi-Source Select 3 Is HDMI 1
+HS=Multi-Source Select 3 Is HDMI 1
+]
+[
+ObjTp=Dp
+H=156
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #3 on the device is HDMI 2.
+SD=Multi-Source Select 3 Is HDMI 2
+RE=Multi-Source Select 3 Is HDMI 2
+HS=Multi-Source Select 3 Is HDMI 2
+]
+[
+ObjTp=Dp
+H=157
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #3 on the device is HDMI 3.
+SD=Multi-Source Select 3 Is HDMI 3
+RE=Multi-Source Select 3 Is HDMI 3
+HS=Multi-Source Select 3 Is HDMI 3
+]
+[
+ObjTp=Dp
+H=158
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #3 on the device is HDMI 4.
+SD=Multi-Source Select 3 Is HDMI 4
+RE=Multi-Source Select 3 Is HDMI 4
+HS=Multi-Source Select 3 Is HDMI 4
+]
+[
+ObjTp=Dp
+H=159
+Tp=3
+DT=1
+FD1=Pulsed high to indicate that the last selected Multi-Source Preset||1
+FD2=on the device was 1.
+SD=Multi-Source Preset is 1
+RE=Multi-Source Preset 1
+HS=Multi-Source Preset is 1
+]
+[
+ObjTp=Dp
+H=160
+Tp=3
+DT=1
+FD1=Pulsed high to indicate that the last selected Multi-Source Preset||1
+FD2=on the device was 2.
+SD=Multi-Source Preset is 2
+RE=Multi-Source Preset 2
+HS=Multi-Source Preset is 2
+]
+[
+ObjTp=Dp
+H=161
+Tp=3
+DT=1
+FD1=Pulsed high to indicate that the last selected Multi-Source Preset||1
+FD2=on the device was 3.
+SD=Multi-Source Preset is 3
+RE=Multi-Source Preset 3
+HS=Multi-Source Preset  is 3
+]
+[
+ObjTp=Dp
+H=162
+Tp=3
+DT=1
+FD1=Pulsed high to indicate that the last selected Multi-Source Preset||1
+FD2=on the device was 4.
+SD=Multi-Source Preset is 4
+RE=Multi-Source Preset 4
+HS=Multi-Source Preset is 4
+]
+[
+ObjTp=Dp
+H=163
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Power Save Config on||1
+FD2=the device is Wake VGA.
+SD=Power Save Config is Wake VGA
+RE=Power Save Config Wake VGA
+HS=Power Save Config is Wake VGA
+]
+[
+ObjTp=Dp
+H=164
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Power Save Config on||1
+FD2=the device is Wake All.
+SD=Power Save Config is Wake All
+RE=Power Save Config Wake All
+HS=Power Save Config is Wake All
+]
+[
+ObjTp=Dp
+H=165
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected Power Save Config on||1
+FD2=the device is Always On.
+SD=Power Save Config is Always On
+RE=Power Save Config Always On
+HS=Power Save Config is Always On
+]
+[
+ObjTp=Dp
+H=166
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #4 on the device is OPS.
+SD=Multi-Source Select 4 Is OPS
+RE=Multi-Source Select 4 Is OPS
+HS=Multi-Source Select 4 Is OPS
+]
+[
+ObjTp=Dp
+H=167
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #4 on the device is HDMI 1.
+SD=Multi-Source Select 4 Is HDMI 1
+RE=Multi-Source Select 4 Is HDMI 1
+HS=Multi-Source Select 4 Is HDMI 1
+]
+[
+ObjTp=Dp
+H=168
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #4 on the device is HDMI 2.
+SD=Multi-Source Select 4 Is HDMI 2
+RE=Multi-Source Select 4 Is HDMI 2
+HS=Multi-Source Select 4 Is HDMI 2
+]
+[
+ObjTp=Dp
+H=169
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #4 on the device is HDMI 3.
+SD=Multi-Source Select 4 Is HDMI 3
+RE=Multi-Source Select 4 Is HDMI 3
+HS=Multi-Source Select 4 Is HDMI 3
+]
+[
+ObjTp=Dp
+H=170
+Tp=3
+DT=1
+FD1=High to indicate that the currently selected input for Multi-Source||1
+FD2=Window #4 on the device is HDMI 4.
+SD=Multi-Source Select 4 Is HDMI 4
+RE=Multi-Source Select 4 Is HDMI 4
+HS=Multi-Source Select 4 Is HDMI 4
+]
+[
+ObjTp=Dp
+H=171
+Tp=3
+DT=1
+FD1=Pulse to indicate connect to the TCP/IP client. This signal should||1
+FD2=be tied to the Connect input on the TCP/IP client outside the module.
+SD={{Connect_>>_TCP/IP_Client}}
+RE=Connect
+HS=Connect
+]
+[
+ObjTp=Dp
+H=172
+Tp=5
+FD1=This signal mirrors the state of the {{TCP/IP_Client_>>_status}}||1
+FD2=signal. This signal should be commented out on the module implementation.
+SD=status
+DNF=1
+]
+[
+ObjTp=Dp
+H=173
+Tp=3
+DT=1
+FD1=This signal mirrors the state of the {{TCP/IP_Client_>>_Connect-
+FD2=F}} signal. This signal should be commented out on the module implementation.
+SD=Connect-F
+RE=Connect-F
+HS=Connect-F
+]
