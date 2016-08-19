@@ -1820,13 +1820,13 @@ CedVer=1
 ;================================================================================
 [
 ObjTp=Symbol
-Name=SFMOMA_Signage_Schedule Fullscreen Storywalls_Schedule Startup Time Storywalls.ced
+Name=SFMOMA_Signage_Schedule Fullscreen Story Screens_Schedule Startup Time Storywalls.ced
 Hint=Schedule Startup Time Storywalls (Smart Object ID=7)
 Code=6
 SGControlType=Dynamic Button List Vertical
 SGControlName=Schedule Startup Time Storywalls
 GUID=F86787F5-ABF3-4C1D-918A-B893CF9CA533
-SmplCName=SFMOMA_Signage_Schedule Fullscreen Storywalls_Schedule Startup Time Storywalls.ced
+SmplCName=SFMOMA_Signage_Schedule Fullscreen Story Screens_Schedule Startup Time Storywalls.ced
 SMWRev=4.02.20
 Expand=expand_random
 HelpID=10112
@@ -2237,7 +2237,7 @@ Sgn=0
 [
 ObjTp=CED
 H=6
-Name=SFMOMA_Signage_Schedule Fullscreen Storywalls_Schedule Startup Time Storywalls.ced
+Name=SFMOMA_Signage_Schedule Fullscreen Story Screens_Schedule Startup Time Storywalls.ced
 ;Cedver is the version of the Smart Graphics control, not the CED file format.
 ;If the control definition changes, increment this.
 CedVer=1
@@ -2245,13 +2245,13 @@ CedVer=1
 ;================================================================================
 [
 ObjTp=Symbol
-Name=SFMOMA_Signage_Schedule Fullscreen Storywalls_Schedule Shutdown Time Storywalls.ced
+Name=SFMOMA_Signage_Schedule Fullscreen Story Screens_Schedule Shutdown Time Storywalls.ced
 Hint=Schedule Shutdown Time Storywalls (Smart Object ID=8)
 Code=7
 SGControlType=Dynamic Button List Vertical
 SGControlName=Schedule Shutdown Time Storywalls
 GUID=4BEF2AFD-D4C2-4EEF-A341-B047FE8E426E
-SmplCName=SFMOMA_Signage_Schedule Fullscreen Storywalls_Schedule Shutdown Time Storywalls.ced
+SmplCName=SFMOMA_Signage_Schedule Fullscreen Story Screens_Schedule Shutdown Time Storywalls.ced
 SMWRev=4.02.20
 Expand=expand_random
 HelpID=10112
@@ -2662,7 +2662,7 @@ Sgn=0
 [
 ObjTp=CED
 H=7
-Name=SFMOMA_Signage_Schedule Fullscreen Storywalls_Schedule Shutdown Time Storywalls.ced
+Name=SFMOMA_Signage_Schedule Fullscreen Story Screens_Schedule Shutdown Time Storywalls.ced
 ;Cedver is the version of the Smart Graphics control, not the CED file format.
 ;If the control definition changes, increment this.
 CedVer=1
