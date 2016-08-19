@@ -1,0 +1,10 @@
+<Device Model="AV3 with card cage">
+   <Network Type="Cresnet" Id="04"/>
+   <Network Type="Ethernet" Id="05">
+      <Device Model="TSW-1050" DeviceId="04" Name="TSW-1050 (Master)"/>
+      <Device Model="Crestron App" DeviceId="3F" Name="Digital Signage Control iPad3 TP2-01"/>
+      <Device Model="Crestron App" DeviceId="40" Name="Digital Signage Control iPad4 TP2-02"/>
+      <Device Model="Crestron App" DeviceId="41" Name="Digital Signage Control iPad5 TP2-03"/>
+      <Device Model="XPanel 2.0 Smart Graphics" DeviceId="42"/>
+   </Network>
+</Device>
